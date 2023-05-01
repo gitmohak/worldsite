@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.myNav{
+    background-color: white !important;
+    position: sticky;
+    top: 0;
+  }
+
+.myNav .navbar-brand{
+  font-family: 'Righteous', cursive;
+  font-size: 30px;
+}
+
+.home-img{
+  position: absolute;
+  right: 1%;
+  bottom: 0;
+  /* height: 90vh; */
+  width: 40%;
+  z-index: 1;
+}
+
+.home-heading{
+  font-family: 'Righteous', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+
+.home-info{
+  font-size: 20px;
+  text-align: center;
+}
+
+.home-left-section{
+  width: 40%;
+  height: 82vh;
+}
+
+.home-left-section .btn{
+  width: 150px;
+  font-size: 20px;
+}
+
+.home-bg{
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  width: 50%;
+}
+
+@keyframes animation-key1{
+  0%{
+    left: 0;
+    bottom: 70%;
+  }
+  100%{
+    left: 35%;
+    bottom: 0;
+  }
+}
+
+@keyframes animation-key2{
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@keyframes animation-key3{
+  0%{
+    left: 0;
+    bottom: 0;
+  }
+  100%{
+    left: 35%;
+    bottom: 60%;
+  }
+}
+
+.animation1{
+  width: 100px;
+  height: 100px;
+  background-color: hotpink;
+  border-radius: 5px;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  animation: animation-key1 20s linear 0s infinite alternate;
+}
+
+.animation2{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 50%;
+  opacity: 0.4;
+  position: absolute;
+  z-index: -1;
+  bottom: 40%;
+  left: 15%;
+  animation: animation-key2 20s linear 0s infinite alternate;
+}
+
+.animation3{
+  width: 70px;
+  height: 150px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  opacity: 0.4;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 20%;
+  animation: animation-key3 20s linear 0s infinite alternate;
+}
