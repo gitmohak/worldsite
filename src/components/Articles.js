@@ -19,7 +19,6 @@ function Articles() {
             <li><a href="/">India</a></li>
             <li><a href="/">America</a></li>
             <li><a href="/">England</a></li>
-            <li><a href="/">Australia</a></li>
         </ul>
 
         <section className='main-articles d-flex flex-row justify-content-between flex-wrap w-75 mx-auto'>

@@ -2,8 +2,8 @@ import React from 'react'
 
 function About() {
     return (
-        <div className='container d-flex flex-wrap justify-content-between about'>
-            <h1 className='w-100'>About</h1>
+        <section className='container d-flex flex-wrap justify-content-between about'>
+            <h1 className='w-100'>About us</h1>
             <div className="card">
             <a href='/'>
                 <img src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg" className="card-img-top" alt="..."/>
@@ -36,7 +36,7 @@ function About() {
                     </div>
                     </a>
             </div>
-        </div>
+        </section>
     )
 }
 
