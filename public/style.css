@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 body{
   margin: 0;
   padding: 0;
@@ -14,7 +10,7 @@ body{
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .myNav .navbar-brand {
@@ -60,7 +56,6 @@ body{
 .home-left-section {
   width: 40%;
   height: 100vh;
-  scroll-snap-align: start;
 }
 
 .home-left-section .btn {
@@ -110,7 +105,7 @@ body{
   opacity: 0.5;
   position: absolute;
   z-index: -1;
-  animation: animation-key1 20s linear 0s infinite alternate;
+  animation: animation-key1 18s linear 0s infinite alternate;
 }
 
 .animation2 {
@@ -123,7 +118,7 @@ body{
   z-index: -1;
   bottom: 40%;
   left: 15%;
-  animation: animation-key2 20s linear 0s infinite alternate;
+  animation: animation-key2 22s linear 0s infinite alternate;
 }
 
 .animation3 {
@@ -139,61 +134,81 @@ body{
   animation: animation-key3 20s linear 0s infinite alternate;
 }
 
-#myCarousel {
-  scroll-snap-align: end;
-}
-
 #myCarousel img {
   object-fit: cover;
 }
 
-.articles {
-  scroll-snap-align: start;
-}
-
-.articles h1 {
+.articles h1, .about h1 {
   font-family: 'Righteous', cursive;
   font-size: 3.8rem;
   text-align: center;
-  position: relative;
-  z-index: 2;
+  margin-top: 20px;
 }
 
 .articles .myHeaders {
   max-width: 700px;
   list-style: none;
   justify-content: space-between;
-  margin: 30px auto 40px;
+  margin: 30px auto 0;
 }
 
 .articles .myHeaders a {
   text-decoration: none;
   color: #212529;
   padding: 10px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
-.articles a:hover {
+.articles .myHeaders a:hover {
   color: white;
   background-color: #0d6efd;
   border-radius: 10%;
 }
 
 .articles .main-articles div {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 10%;
-  position: relative;
   display: flex;
   align-items: center;
+  margin: 30px 0;
+  position: relative;
 }
 
 .articles .main-articles img {
   object-fit: cover;
   border-radius: 10%;
+  position: absolute;
+  z-index: 1;
+}
+
+.articles .main-articles .hoverEffect {
+  z-index: -1;
 }
 
 .articles .main-articles h3 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(138, 43, 226, 0.65);
   position: absolute;
-  z-index: -1;
+  top: 0;
+  border-radius: 10%;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about .card{
+  width: 22rem;
+  transition: all 1s;
+}
+
+.about .card a{
+  text-decoration: none;
+  color: rgb(33, 37, 41);
+}
+
+.about .card:hover{
+  transform: scale(1.2);
 }
