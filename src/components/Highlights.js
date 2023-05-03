@@ -1,46 +1,59 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function Highlights() {
-    return (
-        <section id="myCarousel" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    const [hover, setHover] = useState(null);
+
+    const myEnter = () => {
+        setHover(true);
+    }
+
+    const myLeave = () => {
+        setHover(false);
+    }
+
+  return (
+    <section className='container articles'>
+        <h1>Highlights</h1>
+        <ul className='d-flex myHeaders'>
+            <li><a href="/">All Countries</a></li>
+            <li><a href="/">India</a></li>
+            <li><a href="/">America</a></li>
+            <li><a href="/">England</a></li>
+        </ul>
+
+        <section className='main-articles d-flex flex-row justify-content-between flex-wrap w-75 mx-auto'>
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+            <a href='/'><h3 className='d-flex align-items-center justify-content-center'> Some Text Here</h3></a>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"  alt=""/>
             </div>
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg" className="d-block vh-100 vw-100 mx-auto" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                </div>
-                <div className="carousel-item">
-                    <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg" className="d-block vw-100 vh-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                </div>
-                <div className="carousel-item">
-                    <img src="https://images.freeimages.com/images/previews/ac9/railway-hdr-1361893.jpg" className="d-block vw-100 vh-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                </div>
+
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
+
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
+            </div>
+
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
+            </div>
+
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
+            </div>
+
+            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
+                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
+                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
+            </div>
         </section>
-    )
+    </section>
+  )
 }
 
 export default Highlights
