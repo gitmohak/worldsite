@@ -8,71 +8,65 @@ import Footer from './components/Footer';
 import SinglePost from './components/SinglePost';
 import AllArticles from './components/AllArticles';
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import articlesData from "./postsData.json";
 import aboutData from "./aboutData.json";
 
 function App() {
   let arr = [];
   let arr2 = [];
-  let location = useLocation();
 
   for (let i in articlesData) {
-    arr.push(<Route exact path={`/articles/${i}`} element={<SinglePost articleNum={i} />} />);
+    arr.push(<Route exact path={`/articles/${i}`} element={
+      <>
+        <SinglePost articleNum={i} />
+        <Highlights />
+        <About />
+      </>
+    } />);
   }
 
   for (let i in aboutData) {
-    arr2.push(<Route exact path={`/about/${i}`} element={<SinglePost aboutNum={i} />} />);
-  }
-
-  const showComponents = () => {
-    if (location.pathname === "/") {
-      return <>
-        <Navbar />
-        <Routes>
-
-          <Route exact path="/">
-            <Route index element={<Home />} />
-            <Route exact path="all" element={<AllArticles />} />
-            {arr}
-            {arr2}
-            {/* <Route exact path="*" element={<NoPage />} /> */}
-          </Route>
-        </Routes>
-
+    arr2.push(<Route exact path={`/about/${i}`} element={
+      <>
+        <SinglePost aboutNum={i} />
         <Featured />
         <Highlights />
-        <About />
-        <Contact />
-        <Footer />
       </>
-    }
-
-    else if (location.pathname === "/all") {
-      return <>
-        <Navbar />
-        <Routes>
-
-          <Route exact path="/">
-            <Route index element={<Home />} />
-            <Route exact path="all" element={<AllArticles />} />
-            {arr}
-            {arr2}
-            {/* <Route exact path="*" element={<NoPage />} /> */}
-          </Route>
-        </Routes>
-
-        <Featured />
-        <About />
-        <Contact />
-        <Footer />
-      </>
-    }
+    } />);
   }
 
   return (
     <>
-      {showComponents()}
+      <Navbar />
+      <Routes>
+
+        <Route exact path="/">
+          <Route index element={
+            <>
+              <Home />
+              <Featured />
+              <Highlights />
+              <About />
+            </>
+          } />
+
+          <Route exact path="all" element={
+            <>
+              <AllArticles />
+              <Featured />
+              <About />
+            </>
+          } />
+
+          {arr}
+          {arr2}
+          {/* <Route exact path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+
+      <Contact />
+      <Footer />
     </>
   );
 }
