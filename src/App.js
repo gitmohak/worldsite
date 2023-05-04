@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import SinglePost from './components/SinglePost';
 import AllArticles from './components/AllArticles';
 
+
+
 function App() {
   return (
     <>

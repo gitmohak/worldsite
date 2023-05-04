@@ -22,7 +22,7 @@ function About() {
 
     return (
         <section className='container d-flex flex-wrap justify-content-between about'>
-            <h1 className='w-100'>About us</h1>
+            <h1 className='w-100 my-5'>About us</h1>
             {arr}
         </section>
     )
