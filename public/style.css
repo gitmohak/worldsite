@@ -148,6 +148,11 @@ body {
   animation: animation-key3 20s linear 0s infinite alternate;
 }
 
+.forNavbar{
+  width: 100%;
+  height: 3rem;
+}
+
 #myCarousel img {
   object-fit: cover;
   opacity: 0.7;

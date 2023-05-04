@@ -56,8 +56,9 @@ function Highlights() {
     }
 
     return (
-        <section className='container highlights'>
-            <h1>Highlights</h1>
+        <section id="myHighlights" className='container highlights'>
+            <div className='forNavbar'></div>
+            <h1 className='mt-0'>Highlights</h1>
             <ul className='d-flex myHeaders'>
                 <li><a className={`${place === "all" ? "current-select" : ""}`} onClick={()=>{
                     setPlace("all");
