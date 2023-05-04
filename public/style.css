@@ -152,7 +152,7 @@ body {
   opacity: 0.7;
 }
 
-.articles h1,
+.highlights h1,
 .about h1,
 .contact h1,
 .postContainer h1 {
@@ -162,29 +162,34 @@ body {
   margin-top: 20px;
 }
 
-.articles .myHeaders {
+.highlights .main-highlights{
+  max-width: 1100px;
+}
+
+.highlights .myHeaders {
   max-width: 700px;
   list-style: none;
   justify-content: space-between;
   margin: 30px auto 0;
 }
 
-.articles .myHeaders a {
+.highlights .myHeaders a {
   text-decoration: none;
   color: #212529;
   padding: 10px;
   font-size: 1.3rem;
 }
 
-.articles .myHeaders a:hover {
+.highlights .myHeaders a:hover, .highlights .myHeaders .current-select {
   color: white;
   background-color: #0d6efd;
   border-radius: 10%;
+  cursor: pointer;
 }
 
-.articles .main-articles div {
+.highlights .main-highlights div {
   width: 300px;
-  height: 300px;
+  height: 200px;
   border-radius: 10%;
   display: flex;
   align-items: center;
@@ -192,21 +197,21 @@ body {
   position: relative;
 }
 
-.articles .main-articles img {
+.highlights .main-highlights img {
   object-fit: cover;
   border-radius: 10%;
   position: absolute;
   z-index: 1;
 }
 
-.articles .main-articles .hoverEffect {
+.highlights .main-highlights .hoverEffect {
   z-index: -1;
 }
 
-.articles .main-articles h3 {
+.highlights .main-highlights h3 {
   width: 100%;
   height: 100%;
-  background-color: rgb(138, 43, 226, 0.65);
+  background-color: rgb(13, 110, 253, 0.6);
   position: absolute;
   top: 0;
   border-radius: 10%;

@@ -1,59 +1,86 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
+import data from "../postsData.json";
 
 function Highlights() {
     const [hover, setHover] = useState(null);
 
-    const myEnter = () => {
-        setHover(true);
+    const myEnter = (num) => {
+        setHover(num);
     }
 
     const myLeave = () => {
-        setHover(false);
+        setHover(-1);
     }
 
-  return (
-    <section className='container articles'>
-        <h1>Highlights</h1>
-        <ul className='d-flex myHeaders'>
-            <li><a href="/">All Countries</a></li>
-            <li><a href="/">India</a></li>
-            <li><a href="/">America</a></li>
-            <li><a href="/">England</a></li>
-        </ul>
+    const [place, setPlace] = useState("all");
 
-        <section className='main-articles d-flex flex-row justify-content-between flex-wrap w-75 mx-auto'>
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-            <a href='/'><h3 className='d-flex align-items-center justify-content-center'> Some Text Here</h3></a>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"  alt=""/>
-            </div>
+    let arr = [];
+    
+    let choices = [];
+    switch(place){
+        default:
+            choices = [2,15,7,9,17,4];
+            break;
+        
+        case "india":
+            choices = [0,1,2,3,4,5];
+            break;
 
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
-            </div>
+        case "america":
+            choices = [6,7,8,9,10,11];
+            break;
+        
+        case "england":
+            choices = [12,13,14,15,16,17];
+    }
 
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
-            </div>
+    for (let i = 0; i < data.length; i++) {
+        for (let j of choices) {
 
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
-            </div>
+            if (i === j) {
+                arr.push(
+                    <div onMouseEnter={() => {
+                        myEnter(i);
+                    }}
+                    
+                    onMouseLeave={myLeave}>
 
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
-            </div>
+                        <a href={`/articles/${i}`}>
+                            <h3 className='d-flex align-items-center justify-content-center'>{data[i].region}</h3>
+                        </a>
+                        <img className={`w-100 h-100 ${hover === i ? "hoverEffect" : ""}`} src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
+                    </div>
+                )
+            }
+        }
+    }
 
-            <div onMouseEnter={myEnter} onMouseLeave={myLeave}>
-                <h3 className='d-flex align-items-center justify-content-center'>Some Text Here</h3>
-                <img className={`w-100 h-100 ${hover ? "hoverEffect": ""}`} src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" />
-            </div>
+    return (
+        <section className='container highlights'>
+            <h1>Highlights</h1>
+            <ul className='d-flex myHeaders'>
+                <li><a className={`${place === "all" ? "current-select" : ""}`} onClick={()=>{
+                    setPlace("all");
+                }}>All Countries</a></li>
+
+                <li><a className={`${place === "india" ? "current-select" : ""}`} onClick={() =>{
+                    setPlace("india");
+                }} >India</a></li>
+
+                <li><a className={`${place === "america" ? "current-select" : ""}`} onClick={() => {
+                    setPlace("america");
+                }} >America</a></li>
+
+                <li><a className={`${place === "england" ? "current-select" : ""}`} onClick={() => {
+                    setPlace("england");
+                }} >England</a></li>
+            </ul>
+
+            <section className='main-highlights d-flex flex-row justify-content-between flex-wrap mx-auto'>
+                {arr}
+            </section>
         </section>
-    </section>
-  )
+    )
 }
 
 export default Highlights
