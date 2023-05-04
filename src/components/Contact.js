@@ -2,8 +2,9 @@ import React from 'react'
 
 function Contact() {
     return (
-        <section className='contact container d-flex flex-wrap justify-content-between align-items-center'>
-            <h1 className='w-100 my-5'>Contact us</h1>
+        <section id="myContact" className='contact container d-flex flex-wrap justify-content-between align-items-center'>
+            <div className='forNavbar'></div>
+            <h1 className='w-100 mt-3 mb-5'>Contact us</h1>
             <img src="./images/contact.jpg" alt="" />
             <form>
                 <div className="mb-3">

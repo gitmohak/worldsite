@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,7 +20,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 3;
-  height: 3rem;
+  height: 2.5rem;
 }
 
 .myNav .navbar-brand {
@@ -29,7 +33,7 @@ body {
 }
 
 .myNav ul li a:hover{
-  color: rgb(25, 135, 84);
+  color: rgb(25, 135, 84) !important;
 }
 
 ::-webkit-scrollbar {
@@ -47,6 +51,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(97, 97, 97);
+}
+
+header{
+  scroll-snap-align: start;
 }
 
 .home-img {
@@ -150,12 +158,22 @@ body {
 
 .forNavbar{
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
+  background-color: white;
+}
+
+#myCarousel{
+  scroll-snap-align: start;
 }
 
 #myCarousel img {
   object-fit: cover;
   opacity: 0.7;
+  height: 94.3vh;
+}
+
+#myHighlights{
+  scroll-snap-align: start;
 }
 
 .highlights h1,
@@ -227,6 +245,10 @@ body {
   font-weight: 700;
 }
 
+.about{
+  scroll-snap-align: start;
+}
+
 .about .card {
   width: 23rem;
   transition: all 1s;
@@ -256,6 +278,10 @@ body {
   margin-bottom: 10px;
 }
 
+#myContact{
+  scroll-snap-align: start;
+}
+
 .contact img {
   width: 600px;
 }
@@ -266,6 +292,7 @@ body {
 
 .foot {
   padding: 7rem 0 2.2rem;
+  scroll-snap-align: end;
 }
 
 .foot .bi-linkedin {
@@ -288,10 +315,11 @@ body {
   max-width: 1200px;
   padding: 0 5px;
   margin: 0 auto;
+  scroll-snap-align: start;
 }
 
 .postContainer img {
   border: 20px solid transparent;
-  border-image: url(https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png) 30 round;
+  border-image: url("./images/border.png") 30 round;
   width: 75%;
 }

@@ -1,24 +1,35 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import data from "../postsData.json";
+import articleData from "../postsData.json";
+import aboutData from "../aboutData.json";
 
-function SinglePost() {
-  let articleNum = 10;
-  const date = new Date(data[articleNum].datePublished).toUTCString().slice(0, 16);
+function SinglePost(props) {
+  let postNum, date, data;
+
+  if (props.articleNum) {
+    data = articleData;
+    postNum = props.articleNum;
+    date = new Date(data[postNum].datePublished).toUTCString().slice(0, 16);
+  }
+
+  else if (props.aboutNum) {
+    data = aboutData;
+    postNum = props.aboutNum;
+  }
 
   return (
     <article className='postContainer'>
-      <h1>{data[articleNum].title}</h1>
-      <p className='my-4 fs-5 fw-bold'>By {data[articleNum].author} on {date}</p>
+      <h1>{data[postNum].title}</h1>
+      {props.articleNum && <p className='my-4 fs-5 fw-bold'>By {data[postNum].author} on {date}</p>}
 
-      <p className='mb-4'>{parse(data[articleNum].description)}</p>
+      <span className='mb-4'>{parse(data[postNum].description)}</span>
 
       <div className='text-center'>
-        <img src={data[articleNum].image1} alt="Wonderful Article" />
-        <img className='mt-5 mb-4' src={data[articleNum].image2} alt="Superb Article" />
+        <img src={data[postNum].image1} alt="Wonderful Article" />
+        <img className='mt-5 mb-4' src={data[postNum].image2} alt="Superb Article" />
       </div>
       <p>
-        {parse(data[articleNum].text)}
+        {parse(data[postNum].text)}
       </p>
     </article>
   )

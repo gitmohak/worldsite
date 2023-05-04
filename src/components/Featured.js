@@ -1,6 +1,7 @@
 import React from 'react';
 import data from "../postsData.json";
 import parse from 'html-react-parser';
+import { Link } from "react-router-dom";
 
 function Featured() {
     return (
@@ -13,33 +14,33 @@ function Featured() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <a href='/articles/5'>
-                        <img src={data[5].image1} className="d-block vh-100 vw-100 mx-auto" alt="Great Place" />
+                    <Link to='/articles/5'>
+                        <img src={data[5].image1} className="d-block vw-100 mx-auto" alt="Great Place" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[5].title}</h5>
-                            <p>{parse(data[5].description)}</p>
+                            {parse(data[5].description)}
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="carousel-item">
-                    <a href='/articles/8'>
-                        <img src={data[8].image1} className="d-block vw-100 vh-100" alt="Wonderful location" />
+                    <Link to='/articles/8'>
+                        <img src={data[8].image1} className="d-block vw-100" alt="Wonderful location" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[8].title}</h5>
-                            <p>{parse(data[8].description)}</p>
+                            {parse(data[8].description)}
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="carousel-item">
-                    <a href='/articles/14'>
-                        <img src={data[14].image1} className="d-block vw-100 vh-100" alt="Awesome place" />
+                    <Link to='/articles/14'>
+                        <img src={data[14].image1} className="d-block vw-100" alt="Awesome place" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[14].title}</h5>
-                            <p>{parse(data[14].description)}</p>
+                            {parse(data[14].description)}
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">

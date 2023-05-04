@@ -8,28 +8,71 @@ import Footer from './components/Footer';
 import SinglePost from './components/SinglePost';
 import AllArticles from './components/AllArticles';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import articlesData from "./postsData.json";
+import aboutData from "./aboutData.json";
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
+  let arr = [];
+  let arr2 = [];
+  let location = useLocation();
+
+  for (let i in articlesData) {
+    arr.push(<Route exact path={`/articles/${i}`} element={<SinglePost articleNum={i} />} />);
+  }
+
+  for (let i in aboutData) {
+    arr2.push(<Route exact path={`/about/${i}`} element={<SinglePost aboutNum={i} />} />);
+  }
+
+  const showComponents = () => {
+    if (location.pathname === "/") {
+      return <>
         <Navbar />
         <Routes>
 
-          <Route path="/">
+          <Route exact path="/">
             <Route index element={<Home />} />
-            {/* <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
+            <Route exact path="all" element={<AllArticles />} />
+            {arr}
+            {arr2}
+            {/* <Route exact path="*" element={<NoPage />} /> */}
           </Route>
         </Routes>
-      </BrowserRouter>
 
-      <Featured />
-      <Highlights />
-      <About />
-      <Contact />
-      <Footer />
+        <Featured />
+        <Highlights />
+        <About />
+        <Contact />
+        <Footer />
+      </>
+    }
+
+    else if (location.pathname === "/all") {
+      return <>
+        <Navbar />
+        <Routes>
+
+          <Route exact path="/">
+            <Route index element={<Home />} />
+            <Route exact path="all" element={<AllArticles />} />
+            {arr}
+            {arr2}
+            {/* <Route exact path="*" element={<NoPage />} /> */}
+          </Route>
+        </Routes>
+
+        <Featured />
+        <About />
+        <Contact />
+        <Footer />
+      </>
+    }
+  }
+
+  return (
+    <>
+      {showComponents()}
     </>
   );
 }

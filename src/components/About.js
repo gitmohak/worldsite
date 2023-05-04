@@ -7,7 +7,7 @@ function About() {
     for(let i in data){
         arr.push(
 
-            <div className="card">
+            <div className="card" key={i}>
             <a href={`/about/${i}`}>
                 <img src={data[i].image1} className="card-img-top" alt="Great region"/>
                     <div className="card-body text-center">
@@ -21,8 +21,9 @@ function About() {
     }
 
     return (
-        <section className='container d-flex flex-wrap justify-content-between about'>
-            <h1 className='w-100 my-5'>About us</h1>
+        <section id='myAbout' className='container d-flex flex-wrap justify-content-between about'>
+            <div className='forNavbar'></div>
+            <h1 className='w-100 mt-0 mb-5'>About us</h1>
             {arr}
         </section>
     )
