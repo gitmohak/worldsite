@@ -23,8 +23,7 @@ function About() {
 
     return (
         <section id='myAbout' className='container d-flex flex-wrap justify-content-between about'>
-            <div className='forNavbar'></div>
-            <h1 className='w-100 mt-0 mb-5'>About us</h1>
+            <h1 className='w-100 mt-5 mb-4'>About us</h1>
             {arr}
         </section>
     )

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Featured() {
     return (
         <section id="myCarousel" className="carousel slide bg-dark" data-bs-ride="carousel">
-            <div className='forNavbar'></div>
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>

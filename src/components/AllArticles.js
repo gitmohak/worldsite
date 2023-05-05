@@ -22,13 +22,11 @@ function AllArticles() {
 
     setTimeout(() => {
         window.scrollTo(0, 0);
-        document.getElementsByTagName("html")[0].style.scrollSnapType = "none";
     }, 0);
 
     return (
-        <section className='container d-flex flex-wrap justify-content-between about'>
-            <div className='forNavbar'></div>
-            <h1 className='w-100'>Articles for your Liking</h1>
+        <section id="myAllArticles" className='container d-flex flex-wrap justify-content-between about mb-5'>
+            <h1 className='w-100 mt-5 mb-0'>Articles for your Liking</h1>
             {arr}
         </section>
     )

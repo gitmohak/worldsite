@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
-html{
-  scroll-snap-type: y mandatory;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -53,8 +49,10 @@ body {
   background: rgb(97, 97, 97);
 }
 
-header{
-  scroll-snap-align: start;
+.forNavbar{
+  width: 100%;
+  height: 2.5rem;
+  background-color: white;
 }
 
 .home-img {
@@ -156,24 +154,10 @@ header{
   animation: animation-key3 20s linear 0s infinite alternate;
 }
 
-.forNavbar{
-  width: 100%;
-  height: 2.5rem;
-  background-color: white;
-}
-
-#myCarousel{
-  scroll-snap-align: start;
-}
-
 #myCarousel img {
   object-fit: cover;
   opacity: 0.7;
-  height: 94.3vh;
-}
-
-#myHighlights{
-  scroll-snap-align: start;
+  height: 100vh;
 }
 
 .highlights h1,
@@ -245,10 +229,6 @@ header{
   font-weight: 700;
 }
 
-.about{
-  scroll-snap-align: start;
-}
-
 .about .card {
   width: 23rem;
   transition: all 1s;
@@ -279,10 +259,6 @@ header{
   margin-bottom: 10px;
 }
 
-#myContact{
-  scroll-snap-align: start;
-}
-
 .contact img {
   width: 600px;
 }
@@ -293,7 +269,6 @@ header{
 
 .foot {
   padding: 7rem 0 2.2rem;
-  scroll-snap-align: end;
 }
 
 .foot .bi-linkedin {
@@ -316,7 +291,6 @@ header{
   max-width: 1200px;
   padding: 0 5px;
   margin: 0 auto;
-  scroll-snap-align: start;
 }
 
 .postContainer img {

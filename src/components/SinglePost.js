@@ -19,12 +19,10 @@ function SinglePost(props) {
 
   setTimeout(() => {
     window.scrollTo(0, 0);
-    document.getElementsByTagName("html")[0].style.scrollSnapType = "none";
   }, 0);
 
   return (
-    <article className='postContainer'>
-      <div className='forNavbar'></div>
+    <article className='postContainer mt-5'>
       <h1>{data[postNum].title}</h1>
       {props.articleNum && <p className='my-4 fs-5 fw-bold'>By {data[postNum].author} on {date}</p>}
 
