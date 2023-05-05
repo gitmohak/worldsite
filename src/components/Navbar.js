@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
     const [markSection, setmarkSection] = useState("myHome");
+    const navigate = useNavigate();
 
     // window.onscroll = () => {
     //   const myHome = document.getElementById("myHome");
@@ -42,19 +43,43 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item me-4">
-                                <a className={`nav-link fs-5 fw-bold text-primary ${markSection === "myHome" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#">Home</a>
+
+                                <a onClick={()=>{
+                                    navigate("/");
+                                }}
+
+                                className={`nav-link fs-5 fw-bold text-primary ${markSection === "myHome" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myHome">Home</a>
+
                             </li>
 
                             <li className="nav-item me-4">
-                                <a className={`nav-link fs-5 fw-bold ${markSection === "myCarousel" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myCarousel">Featured</a>
+                                
+                                <a onClick={()=>{
+                                    navigate("/");
+                                }}
+                                
+                                className={`nav-link fs-5 fw-bold ${markSection === "myCarousel" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myCarousel">Featured</a>
+                            
                             </li>
 
                             <li className="nav-item me-4">
-                                <a className={`nav-link fs-5 fw-bold ${markSection === "myHighlights" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myHighlights">Highlights</a>
+                                
+                                <a onClick={()=>{
+                                    navigate("/");
+                                }}
+                                
+                                className={`nav-link fs-5 fw-bold ${markSection === "myHighlights" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myHighlights">Highlights</a>
+                            
                             </li>
 
                             <li className="nav-item me-4">
-                                <a className={`nav-link fs-5 fw-bold ${markSection === "myAbout" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myAbout">About us</a>
+                                
+                                <a onClick={()=>{
+                                    navigate("/");
+                                }}
+                                
+                                className={`nav-link fs-5 fw-bold ${markSection === "myAbout" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myAbout">About us</a>
+                            
                             </li>
 
                             <li className="nav-item me-4">
@@ -62,7 +87,13 @@ function Navbar() {
                             </li>
 
                             <li className="nav-item">
-                                <a className={`nav-link fs-5 fw-bold ${markSection === "myContact" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myContact">Contact us</a>
+                                
+                                <a onClick={()=>{
+                                    navigate("/");
+                                }}
+                                
+                                className={`nav-link fs-5 fw-bold ${markSection === "myContact" ? "text-decoration-underline text-success" : ""}`} aria-current="page" href="#myContact">Contact us</a>
+                            
                             </li>
                         </ul>
                         {/* <form className="d-flex" role="search">

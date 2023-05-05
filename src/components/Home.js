@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Home() {
+    
+    setTimeout(() => {
+        document.getElementsByTagName("html")[0].style.scrollSnapType = "y mandatory";
+      }, 0);
+
     return (
         <header id="myHome" className='container'>
             <div className='animation1'></div>
