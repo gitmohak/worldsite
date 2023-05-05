@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react';
 
 function Contact() {
     const contactForm = useRef();
+    const modalRef = useRef(null);
+
     const [resultText, setresultText] = useState({
         title: "Please Wait",
         description: "Your message is being delivered."
@@ -10,25 +12,26 @@ function Contact() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        modalRef.current.click();
+
         setresultText({
             title: "Please Wait",
             description: "Your message is being delivered."
         });
-        console.log("I am called")
 
-        // emailjs.sendForm('service_0wcmgnv', 'template_ulzc5a7', contactForm.current, 'O0wEfR0CHzgJz00pr')
-        //     .then(() => {
-        //         setresultText({
-        //             title: "SUCCESS",
-        //             description: "Your message has been delivered. We will respond back shortly."
-        //         });
+        emailjs.sendForm('service_0wcmgnv', 'template_ulzc5a7', contactForm.current, 'O0wEfR0CHzgJz00pr')
+            .then(() => {
+                setresultText({
+                    title: "SUCCESS",
+                    description: "Your message has been delivered. We will respond back shortly."
+                });
 
-        //     }, (error) => {
-        //         setresultText({
-        //             title: "ERROR",
-        //             description: `A problem has occurred while sending your message - ${error.text}`
-        //         });
-        //     });
+            }, (error) => {
+                setresultText({
+                    title: "ERROR",
+                    description: `A problem has occurred while sending your message - ${error.text}`
+                });
+            });
 
         setTimeout(() => {
             document.getElementById("senderName").value = "";
@@ -63,9 +66,10 @@ function Contact() {
                     <textarea className="form-control" name="message" id="sender-msg" aria-describedby="messageHelp" required minLength={10} rows={6} />
                 </div>
 
-                <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal" type="submit">
+                <button className="btn btn-primary" type="submit">
                     Submit
                 </button>
+                <button hidden ref={modalRef} data-bs-toggle="modal" data-bs-target="#formModal"></button>
             </form>
 
             <div className="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
