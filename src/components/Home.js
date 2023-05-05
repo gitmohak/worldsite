@@ -11,7 +11,7 @@ function Home() {
             <div className='d-flex flex-column justify-content-center align-items-center home-left-section'>
                 <h1 className='home-heading mt-0 mb-0'>Visit the Entire World</h1>
                 <p className='home-info mb-5 mt-4'>World Site provides extremely interesting and useful information about the world. You can go to various fantastic places in the world just by visiting here.</p>
-                <button className='btn btn-primary'>Watch Trailer</button>
+                <a className='btn btn-primary' href='#myCarousel'>Check Us Out</a>
             </div>
         </header>
     )
