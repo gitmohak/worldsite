@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import doScrollSpy from "../methods/scrollSpy";
 
-function Navbar() {
+function Navbar(props) {
     const [markSection, setmarkSection] = useState("myHome");
-    const [mode, setMode] = useState("light");
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -14,32 +13,38 @@ function Navbar() {
     }
 
     const darkModeFunc = () =>{
-        mode === "light" ? setMode("dark") : setMode("light");
+        props.mode === "light" ? props.setMode("dark") : props.setMode("light");
     }
 
     const doDecoration = (ms) => {
+        let design = "";
+
         if(markSection === ms){
-            if(mode === "light"){
-                return "text-decoration-underline text-success";
+            if(props.mode === "light"){
+                design = "text-decoration-underline text-success";
             }
-            else if(mode === "dark"){
-                return "text-decoration-underline darkModeGreen";
+            else if(props.mode === "dark"){
+                design = "text-decoration-underline darkModeGreen";
             }
         }
-        else{
-            return "";
+
+        if(props.mode === "light"){
+            return "lightModeBlue " + design;
+        }
+        else if(props.mode === "dark"){
+            return "darkModeBlue " + design;
         }
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg myNav ${mode === "dark" ? "bg-black" : ""}`}>
+        <nav className={`navbar navbar-expand-lg myNav ${props.mode === "dark" ? "bg-black" : ""}`}>
             <div className="container-fluid">
 
                 <a onClick={() => {
                     navigate("/");
                     setmarkSection("myHome");
                 }}
-                    className={`navbar-brand ${mode === "light" ? "text-success" : "darkModeGreen"}`} href="#myHome">World Site</a>
+                    className={`navbar-brand ${props.mode === "light" ? "text-success" : "darkModeGreen"}`} href="#myHome">World Site</a>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -52,7 +57,7 @@ function Navbar() {
                                 navigate("/");
                                 setmarkSection("myHome");
                             }}
-                                className={`nav-link fs-5 fw-bold lightModeBlue ${mode === "light" ? "text-primary" : "darkModeBlue"} ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
+                                className={`nav-link fs-5 fw-bold ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
 
                         </li>
 
@@ -89,7 +94,7 @@ function Navbar() {
                                 window.scrollTo(0, 0);
                                 setmarkSection("myAllArticles");
                             }}
-                                className={`nav-link fs-5 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
+                                className={`nav-link fs-5 fw-bold ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                         </li>
 
                         <li className="nav-item">
@@ -102,7 +107,7 @@ function Navbar() {
                         </li>
 
                         <li className="nav-item form-check form-switch darkSwitchLi">
-                            <label className={`nav-link fs-5 form-check-label`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                            <label className={`nav-link fs-5 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
                             <input onClick={darkModeFunc} className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                         </li>
                     </ul>

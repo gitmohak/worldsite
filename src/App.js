@@ -11,8 +11,10 @@ import AllArticles from './components/AllArticles';
 import { Routes, Route } from "react-router-dom";
 import articlesData from "./postsData.json";
 import aboutData from "./aboutData.json";
+import { useState } from 'react';
 
 function App() {
+  const [mode, setMode] = useState("light");
   let arr = [];
   let arr2 = [];
 
@@ -38,13 +40,13 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar mode={mode} setMode={setMode} />
       <Routes>
 
         <Route exact path="/">
           <Route index element={
             <>
-              <Home />
+              <Home mode={mode} />
               <Featured />
               <Highlights />
               <About />

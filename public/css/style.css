@@ -24,11 +24,11 @@ body {
   font-size: 2rem;
 }
 
-.myNav ul li a, .myNav ul li label{
+.lightModeBlue{
   color: rgb(13, 110, 253);
 }
 
-.myNav ul li a:hover, .myNav ul li label:hover{
+.lightModeBlue:hover{
   color: rgb(25, 135, 84) !important;
 }
 
@@ -83,6 +83,16 @@ body {
   width: 100%;
   height: 2.5rem;
   background-color: white;
+}
+
+#myHome .home-bg{
+  position: absolute;
+  background-color: black;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .home-img {
@@ -326,4 +336,6 @@ body {
   border: 20px solid transparent;
   border-image: url("/images/border.png") 30 round;
   width: 75%;
+  height: 75vh;
+  object-fit: cover;
 }

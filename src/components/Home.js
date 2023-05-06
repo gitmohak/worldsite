@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Home() {
+function Home(props) {
     return (
         <header id="myHome" className='container'>
+            <div className='home-bg'></div>
+            
             <div className='animation1'></div>
             <div className='animation2'></div>
             <div className='animation3'></div>
