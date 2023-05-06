@@ -3,8 +3,6 @@ import React from 'react';
 function Home(props) {
     return (
         <header id="myHome" className='container'>
-            {/* {props.mode === "dark" && <div className='dark-mode-background'></div>} */}
-
             <div className={`animation1 ${props.mode === "dark" ? "opacity-75" : ""}`}></div>
             <div className={`animation2 ${props.mode === "dark" ? "opacity-75" : ""}`}></div>
             <div className={`animation3 ${props.mode === "dark" ? "opacity-75" : ""}`}></div>

@@ -13,6 +13,8 @@ import articlesData from "./postsData.json";
 import aboutData from "./aboutData.json";
 import { useState } from 'react';
 
+import StopScrollState from './contexts/StopScrollState';
+
 function App() {
   const [mode, setMode] = useState("light");
   let arr = [];
@@ -21,9 +23,9 @@ function App() {
   for (let i in articlesData) {
     arr.push(<Route exact path={`/articles/${i}`} element={
       <>
-        <SinglePost articleNum={i} />
+        <SinglePost mode={mode} articleNum={i} />
         <Highlights mode={mode} />
-        <About />
+        <About mode={mode} />
       </>
     } />);
   }
@@ -31,7 +33,7 @@ function App() {
   for (let i in aboutData) {
     arr2.push(<Route exact path={`/about/${i}`} element={
       <>
-        <SinglePost aboutNum={i} />
+        <SinglePost mode={mode} aboutNum={i} />
         <Featured />
         <Highlights mode={mode} />
       </>
@@ -39,7 +41,7 @@ function App() {
   }
 
   return (
-    <>
+    <StopScrollState>
       <Navbar mode={mode} setMode={setMode} />
       <Routes>
 
@@ -49,15 +51,15 @@ function App() {
               <Home mode={mode} />
               <Featured />
               <Highlights mode={mode} />
-              <About />
+              <About mode={mode} />
             </>
           } />
 
           <Route exact path="all" element={
             <>
-              <AllArticles />
+              <AllArticles mode={mode} />
               <Featured />
-              <About />
+              <About mode={mode} />
             </>
           } />
 
@@ -67,9 +69,9 @@ function App() {
         </Route>
       </Routes>
 
-      <Contact />
-      <Footer />
-    </>
+      <Contact mode={mode} />
+      <Footer mode={mode} />
+    </StopScrollState>
   );
 }
 

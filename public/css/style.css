@@ -85,16 +85,6 @@ body {
   background-color: white;
 }
 
-.dark-mode-background{
-  position: absolute;
-  background-color: black;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .home-img {
   position: absolute;
   right: 0;
@@ -310,16 +300,13 @@ body {
   padding: 7rem 0 2.2rem;
 }
 
-.foot .bi-linkedin {
-  color: #0274b3;
-}
-
 .foot .bi-twitter {
   color: #1DA1F2;
 }
 
-.foot .bi-facebook {
-  color: #4267B2;
+.foot .social-icons{
+  width: 1.6rem;
+  padding-bottom: 5px;
 }
 
 .foot img {

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import parse from 'html-react-parser';
 import articleData from "../postsData.json";
 import aboutData from "../aboutData.json";
+import stopScrollContext from '../contexts/stopScrollContext';
 
 function SinglePost(props) {
   let postNum, date, data;
@@ -17,12 +18,16 @@ function SinglePost(props) {
     postNum = props.aboutNum;
   }
 
+  const { stopScroll } = useContext(stopScrollContext);
+
   setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 0);
+    if (stopScroll === false) {
+        window.scrollTo(0, 0);
+    }
+}, 0);
 
   return (
-    <article className='postContainer mt-5'>
+    <article className={`postContainer mt-5 ${props.mode === "dark" ? "text-light" : ""}`}>
       <h1>{data[postNum].title}</h1>
       {props.articleNum && <p className='my-4 fs-5 fw-bold'>By {data[postNum].author} on {date}</p>}
 

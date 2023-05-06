@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import data from "../postsData.json";
 import parse from 'html-react-parser';
 import { Link } from "react-router-dom";
+import stopScrollContext from '../contexts/stopScrollContext';
 
 function Featured() {
+    const {setstopScroll} = useContext(stopScrollContext);
+
     return (
         <section id="myCarousel" className="carousel slide bg-dark" data-bs-ride="carousel">
             <div className="carousel-indicators">
@@ -13,7 +16,11 @@ function Featured() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <Link to='/articles/5'>
+
+                    <Link onClick={()=>{
+                        setstopScroll(false);
+                    }}
+                    to='/articles/5'>
                         <img src={data[5].image1} className="d-block vw-100 mx-auto" alt="Great Place" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[5].title}</h5>
@@ -23,7 +30,11 @@ function Featured() {
                 </div>
 
                 <div className="carousel-item">
-                    <Link to='/articles/8'>
+
+                    <Link onClick={()=>{
+                        setstopScroll(false);
+                    }}
+                    to='/articles/8'>
                         <img src={data[8].image1} className="d-block vw-100" alt="Wonderful location" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[8].title}</h5>
@@ -33,7 +44,10 @@ function Featured() {
                 </div>
 
                 <div className="carousel-item">
-                    <Link to='/articles/14'>
+              
+                    <Link onClick={()=>{
+                        setstopScroll(false);
+                    }} to='/articles/14'>
                         <img src={data[14].image1} className="d-block vw-100" alt="Awesome place" />
                         <div className="carousel-caption d-none d-md-block">
                             <h5>{data[14].title}</h5>

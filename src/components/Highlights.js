@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import data from "../postsData.json";
 import { Link } from "react-router-dom";
+import stopScrollContext from '../contexts/stopScrollContext';
 
 function Highlights(props) {
+    const { setstopScroll } = useContext(stopScrollContext);
+
     const [hover, setHover] = useState(null);
 
     const myEnter = (num) => {
@@ -46,7 +49,10 @@ function Highlights(props) {
 
                         onMouseLeave={myLeave}>
 
-                        <Link to={`/articles/${i}`}>
+                        <Link onClick={() => {
+                            setstopScroll(false);
+                        }}
+                            to={`/articles/${i}`}>
                             <h3 className='d-flex align-items-center justify-content-center'>{data[i].region}</h3>
                         </Link>
                         <img className={`w-100 h-100 ${hover === i ? "hoverEffect" : ""}`} src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
@@ -57,10 +63,7 @@ function Highlights(props) {
     }
 
     return (
-    <section className='container-fluid position-relative'>
-        {/* {props.mode === "dark" && <div className='dark-mode-background'></div>} */}
         <section id="myHighlights" className='container highlights'>
-
             <div className={`forNavbar ${props.mode === "dark" ? "bg-black" : ""}`}></div>
             <h1 className={`mt-0 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Highlights</h1>
             <ul className='d-flex myHeaders'>
@@ -85,7 +88,6 @@ function Highlights(props) {
                 {arr}
             </section>
         </section>
-    </section>
     )
 }
 
