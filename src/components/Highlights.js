@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import data from "../postsData.json";
 import { Link } from "react-router-dom";
 
-function Highlights() {
+function Highlights(props) {
     const [hover, setHover] = useState(null);
 
     const myEnter = (num) => {
@@ -57,23 +57,26 @@ function Highlights() {
     }
 
     return (
+    <section className='container-fluid position-relative'>
+        {/* {props.mode === "dark" && <div className='dark-mode-background'></div>} */}
         <section id="myHighlights" className='container highlights'>
-            <div className='forNavbar'></div>
-            <h1 className='mt-0 mb-4'>Highlights</h1>
+
+            <div className={`forNavbar ${props.mode === "dark" ? "bg-black" : ""}`}></div>
+            <h1 className={`mt-0 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Highlights</h1>
             <ul className='d-flex myHeaders'>
-                <li><a className={`${place === "all" ? "current-select" : ""}`} onClick={() => {
+                <li><a className={`${place === "all" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("all");
                 }}>All Countries</a></li>
 
-                <li><a className={`${place === "india" ? "current-select" : ""}`} onClick={() => {
+                <li><a className={`${place === "india" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("india");
                 }} >India</a></li>
 
-                <li><a className={`${place === "america" ? "current-select" : ""}`} onClick={() => {
+                <li><a className={`${place === "america" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("america");
                 }} >America</a></li>
 
-                <li><a className={`${place === "england" ? "current-select" : ""}`} onClick={() => {
+                <li><a className={`${place === "england" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("england");
                 }} >England</a></li>
             </ul>
@@ -82,6 +85,7 @@ function Highlights() {
                 {arr}
             </section>
         </section>
+    </section>
     )
 }
 

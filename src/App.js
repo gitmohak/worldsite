@@ -22,7 +22,7 @@ function App() {
     arr.push(<Route exact path={`/articles/${i}`} element={
       <>
         <SinglePost articleNum={i} />
-        <Highlights />
+        <Highlights mode={mode} />
         <About />
       </>
     } />);
@@ -33,7 +33,7 @@ function App() {
       <>
         <SinglePost aboutNum={i} />
         <Featured />
-        <Highlights />
+        <Highlights mode={mode} />
       </>
     } />);
   }
@@ -48,7 +48,7 @@ function App() {
             <>
               <Home mode={mode} />
               <Featured />
-              <Highlights />
+              <Highlights mode={mode} />
               <About />
             </>
           } />

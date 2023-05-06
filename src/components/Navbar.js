@@ -14,6 +14,14 @@ function Navbar(props) {
 
     const darkModeFunc = () =>{
         props.mode === "light" ? props.setMode("dark") : props.setMode("light");
+        if(props.mode === "light"){
+            props.setMode("dark");
+            document.body.style.backgroundColor = "black";
+        }
+        else{
+            props.setMode("light");
+            document.body.style.backgroundColor = "white";
+        }
     }
 
     const doDecoration = (ms) => {
