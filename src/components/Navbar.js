@@ -122,7 +122,7 @@ function Navbar(props) {
                                 window.scrollTo(0, 0);
                                 setmarkSection("myAllArticles");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
+                                className={`nav-link fs-5 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                         </li>
 
                         <li className="nav-item form-check form-switch darkSwitchLi">
