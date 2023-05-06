@@ -24,12 +24,42 @@ body {
   font-size: 2rem;
 }
 
-.myNav ul li a{
+.myNav ul li a, .myNav ul li label{
   color: rgb(13, 110, 253);
 }
 
-.myNav ul li a:hover{
+.myNav ul li a:hover, .myNav ul li label:hover{
   color: rgb(25, 135, 84) !important;
+}
+
+.darkModeBlue{
+  color: rgb(77, 148, 255) !important;
+}
+
+.darkModeGreen{
+  color: rgb(0, 179, 95) !important;
+}
+
+.darkModeBlue:hover{
+  color: rgb(0, 179, 95) !important;
+}
+
+#darkSwitch{
+  position: absolute;
+  top: 26%;
+  right: 0;
+  cursor: pointer;
+}
+
+.darkSwitchLi{
+  position: relative;
+  padding-left: 1.7rem;
+  padding-right: 2rem;
+}
+
+.darkSwitchLi label{
+  cursor: pointer;
+  font-weight: 700;
 }
 
 ::-webkit-scrollbar {
@@ -294,6 +324,6 @@ body {
 
 .postContainer img {
   border: 20px solid transparent;
-  border-image: url("./images/border.png") 30 round;
+  border-image: url("/images/border.png") 30 round;
   width: 75%;
 }
