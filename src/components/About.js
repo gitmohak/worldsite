@@ -11,7 +11,7 @@ function About(props) {
     for (let i in data) {
         arr.push(
 
-            <div className={`card ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={i}>
+            <div className={`card mt-5 ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={i}>
                 <Link onClick={() => {
                     setstopScroll(false);
                 }}
@@ -29,7 +29,7 @@ function About(props) {
 
     return (
         <section id='myAbout' className='container d-flex flex-wrap justify-content-between about'>
-            <h1 className={`w-100 mt-5 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>About us</h1>
+            <h1 className={`w-100 mt-5 mb-0 ${props.mode === "dark" ? "text-light" : ""}`}>About us</h1>
             {arr}
         </section>
     )
