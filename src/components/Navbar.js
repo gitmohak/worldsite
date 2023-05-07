@@ -8,7 +8,7 @@ function Navbar(props) {
     const {setstopScroll} = useContext(stopScrollContext);
 
     const navigate = useNavigate();
-    const location = useLocation();
+    const location = useLocation();    
 
     window.onscroll = () => {
         doScrollSpy(location, setmarkSection);
@@ -17,7 +17,6 @@ function Navbar(props) {
     const darkModeFunc = () =>{
         setstopScroll(true);
 
-        props.mode === "light" ? props.setMode("dark") : props.setMode("light");
         if(props.mode === "light"){
             props.setMode("dark");
             document.body.style.backgroundColor = "black";
@@ -71,7 +70,7 @@ function Navbar(props) {
                                 navigate("/");
                                 setmarkSection("myHome");
                             }}
-                                className={`nav-link fs-4 fw-bold ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
 
                         </li>
 
@@ -81,7 +80,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-4 fw-bold ${doDecoration("myCarousel")}`} aria-current="page" href="#myCarousel">Featured</a>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
 
                         </li>
 
@@ -91,7 +90,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-4 fw-bold ${doDecoration("myHighlights")}`} aria-current="page" href="#myHighlights">Highlights</a>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
 
                         </li>
 
@@ -101,7 +100,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-4 fw-bold ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout">About us</a>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
 
                         </li>
 
@@ -111,7 +110,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-4 fw-bold ${doDecoration("myContact")}`} aria-current="page" href="#myContact">Contact us</a>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
 
                         </li>
 
@@ -127,13 +126,10 @@ function Navbar(props) {
 
                         <li className="nav-item form-check form-switch darkSwitchLi">
                             <label className={`nav-link fs-4 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                            
                             <input onClick={darkModeFunc} className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                         </li>
                     </ul>
-                    {/* <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form> */}
                 </div>
             </div>
         </nav>

@@ -193,7 +193,7 @@ body {
 .highlights h1,
 .about h1,
 .contact h1,
-.postContainer h1 {
+.postContainer h1, .notFound h1 {
   font-family: 'Righteous', cursive;
   font-size: 3.8rem;
   text-align: center;
@@ -326,4 +326,8 @@ body {
   width: 75%;
   height: 75vh;
   object-fit: cover;
+}
+
+.notFound img{
+  width: 30%;
 }
