@@ -8,9 +8,9 @@ function Footer(props) {
             <div className='fs-3'>
                 <a href="https://www.twitter.com/itsmohak/" target="_blank" rel="noreferrer"><i className="bi bi-twitter"></i></a>
 
-                <a href="https://www.linkedin.com/in/mohakarora/" target="_blank" rel="noreferrer"><img className='social-icons mx-4' src="/images/icons/linkedin.png" alt="Linked In" /></a>
+                <a href="https://www.linkedin.com/in/mohakarora/" target="_blank" rel="noreferrer"><img className='social-icons mx-4' src="/images/social/linkedin.png" alt="Linked In" /></a>
 
-                <a href="https://www.facebook.com/aroramohak28/" target="_blank" rel="noreferrer"><img className='social-icons' src="/images/icons/facebook.png" alt="Facebook" /></a>
+                <a href="https://www.facebook.com/aroramohak28/" target="_blank" rel="noreferrer"><img className='social-icons' src="/images/social/facebook.png" alt="Facebook" /></a>
             </div>
         </footer>
     )

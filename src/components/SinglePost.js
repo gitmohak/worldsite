@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import parse from 'html-react-parser';
-import articleData from "../postsData.json";
-import aboutData from "../aboutData.json";
+import articleData from "../data/postsData.json";
+import aboutData from "../data/aboutData.json";
 import stopScrollContext from '../contexts/stopScrollContext';
 
 function SinglePost(props) {

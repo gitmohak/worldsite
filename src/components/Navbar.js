@@ -71,7 +71,7 @@ function Navbar(props) {
                                 navigate("/");
                                 setmarkSection("myHome");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
+                                className={`nav-link fs-4 fw-bold ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
 
                         </li>
 
@@ -81,7 +81,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myCarousel")}`} aria-current="page" href="#myCarousel">Featured</a>
+                                className={`nav-link fs-4 fw-bold ${doDecoration("myCarousel")}`} aria-current="page" href="#myCarousel">Featured</a>
 
                         </li>
 
@@ -91,7 +91,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myHighlights")}`} aria-current="page" href="#myHighlights">Highlights</a>
+                                className={`nav-link fs-4 fw-bold ${doDecoration("myHighlights")}`} aria-current="page" href="#myHighlights">Highlights</a>
 
                         </li>
 
@@ -101,7 +101,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout">About us</a>
+                                className={`nav-link fs-4 fw-bold ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout">About us</a>
 
                         </li>
 
@@ -111,7 +111,7 @@ function Navbar(props) {
                                 setstopScroll(false);
                                 navigate("/");
                             }}
-                                className={`nav-link fs-5 fw-bold ${doDecoration("myContact")}`} aria-current="page" href="#myContact">Contact us</a>
+                                className={`nav-link fs-4 fw-bold ${doDecoration("myContact")}`} aria-current="page" href="#myContact">Contact us</a>
 
                         </li>
 
@@ -122,11 +122,11 @@ function Navbar(props) {
                                 window.scrollTo(0, 0);
                                 setmarkSection("myAllArticles");
                             }}
-                                className={`nav-link fs-5 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
+                                className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                         </li>
 
                         <li className="nav-item form-check form-switch darkSwitchLi">
-                            <label className={`nav-link fs-5 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                            <label className={`nav-link fs-4 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
                             <input onClick={darkModeFunc} className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                         </li>
                     </ul>

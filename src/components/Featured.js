@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import data from "../postsData.json";
+import data from "../data/postsData.json";
 import parse from 'html-react-parser';
 import { Link } from "react-router-dom";
 import stopScrollContext from '../contexts/stopScrollContext';
