@@ -80,12 +80,6 @@ body {
   background: rgb(97, 97, 97);
 }
 
-.forNavbar {
-  width: 100%;
-  height: 2.5rem;
-  background-color: white;
-}
-
 #myHome{
   height: 100vh;
 }
@@ -121,7 +115,7 @@ body {
   }
 
   100% {
-    left: 35%;
+    left: 30%;
     bottom: 0;
   }
 }
@@ -143,7 +137,7 @@ body {
   }
 
   100% {
-    left: 35%;
+    left: 30%;
     bottom: 70%;
   }
 }
@@ -189,6 +183,10 @@ body {
   object-fit: cover;
   opacity: 0.7;
   height: 100vh;
+}
+
+.highlights{
+  padding-top: 3rem;
 }
 
 .highlights h1,
@@ -360,5 +358,89 @@ body {
 @media only screen and (min-height: 1080px){
 #myHome, .contact {
     height: 1080px;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  #myAbout, #myAllArticles{
+    max-width: 95%;
+  }
+}
+
+@media only screen and (max-width: 1340px){
+  .myNav ul li a, .myNav ul li label{
+    font-size: 18px !important;
+  }
+
+  #darkSwitch {
+    top: 10px;
+  }
+}
+
+@media only screen and (max-width: 1265px){
+  #myAbout, #myAllArticles{
+    max-width: 90%;
+    justify-content: space-evenly !important;
+  }
+
+  .about .card {
+    width: 27rem;
+  }
+
+  .about .card button {
+    left: 10.5rem;
+  }
+
+  .highlights .main-highlights div {
+    width: 430px;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1135px){
+.myNav{
+  height: 3.5rem;
+  max-width: 1110px;
+}
+
+#darkSwitch {
+  right: 5%;
+  top: 22px;
+}
+
+.contact{
+  padding-top: 15px;
+}
+
+#myAbout .card{
+  width: 32rem;
+}
+
+#myAbout{
+  max-width: 70%;
+}
+
+#myAbout .card button {
+  left: 12.7rem;
+}
+
+#myAllArticles{
+  max-width: 90%;
+  justify-content: space-between !important;
+}
+}
+
+@media only screen and (max-width: 1045px){
+  #myAllArticles .card{
+    width: 32rem;
+  }
+  
+  #myAllArticles{
+    max-width: 70%;
+    justify-content: center !important;
+  }
+  
+  #myAllArticles .card button {
+    left: 12.7rem;
   }
 }

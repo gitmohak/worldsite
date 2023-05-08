@@ -64,7 +64,6 @@ function Highlights(props) {
 
     return (
         <section id="myHighlights" className='container highlights'>
-            <div className={`forNavbar ${props.mode === "dark" ? "bg-black" : ""}`}></div>
             <h1 className={`mt-0 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Highlights</h1>
             <ul className='d-flex myHeaders'>
                 <li><a className={`${place === "all" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
@@ -84,7 +83,7 @@ function Highlights(props) {
                 }} >England</a></li>
             </ul>
 
-            <section className='main-highlights d-flex flex-row justify-content-evenly flex-wrap mx-auto'>
+            <section className='main-highlights d-flex flex-row justify-content-around flex-wrap mx-auto'>
                 {arr}
             </section>
         </section>

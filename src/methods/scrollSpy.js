@@ -27,7 +27,7 @@ const scrollSpy = (myHome = null, myCarousel = null, myHighlights = null, myAbou
         myAllArticlesValue = document.getElementById("myAllArticles").offsetTop;
     }
 
-    if (window.scrollY + 20 >= (myContactValue + myAboutValue) / 2) {
+    if (window.scrollY + 20 >= myContactValue || window.scrollY + window.innerHeight >= document.body.offsetHeight - 30) {
         setmarkSection("myContact");
     }
 

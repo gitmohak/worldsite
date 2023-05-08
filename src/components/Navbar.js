@@ -63,7 +63,7 @@ function Navbar(props) {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav d-flex align-items-center me-auto mb-2 mb-lg-0">
                             <li className="nav-item me-4">
 
                                 <a onClick={() => {
@@ -101,7 +101,7 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
 
                             </li>
 
@@ -111,7 +111,7 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
 
                             </li>
 
@@ -122,11 +122,11 @@ function Navbar(props) {
                                     window.scrollTo(0, 0);
                                     setmarkSection("myAllArticles");
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                             </li>
 
                             <li className="nav-item form-check form-switch darkSwitchLi">
-                                <label className={`nav-link fs-4 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                                <label className={`nav-link text-center fs-4 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
 
                                 <input onClick={darkModeFunc} className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                             </li>
