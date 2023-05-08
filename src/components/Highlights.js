@@ -84,7 +84,7 @@ function Highlights(props) {
                 }} >England</a></li>
             </ul>
 
-            <section className='main-highlights d-flex flex-row justify-content-between flex-wrap mx-auto'>
+            <section className='main-highlights d-flex flex-row justify-content-evenly flex-wrap mx-auto'>
                 {arr}
             </section>
         </section>
