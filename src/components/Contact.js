@@ -42,9 +42,9 @@ function Contact(props) {
     }
 
     return (
-        <section id="myContact" className='contact container d-flex flex-wrap justify-content-between align-items-center'>
-            <h1 className={`w-100 mt-5 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Contact us</h1>
-            <img src={`/images/${props.mode === "light" ? "contact.jpg" : "contact-dark.jpg"}`} alt="Contact Us with message" />
+        <section id="myContact" className='contact container d-flex flex-wrap justify-content-around align-items-center'>
+            <h1 className={`w-100 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Contact us</h1>
+            <img src="/images/contactTall.png" alt="Contact Us with message" />
             <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm} onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="senderName" className="form-label">Name</label>

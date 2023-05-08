@@ -14,10 +14,10 @@ body {
   background-color: white;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 3;
   height: 2.5rem;
   font-family: 'Laila', sans-serif;
+  border-radius: 10px;
 }
 
 .myNav .navbar-brand {
@@ -25,40 +25,40 @@ body {
   font-size: 2.5rem;
 }
 
-.lightModeBlue{
+.lightModeBlue {
   color: rgb(13, 110, 253);
 }
 
-.lightModeBlue:hover{
+.lightModeBlue:hover {
   color: rgb(25, 135, 84) !important;
 }
 
-.darkModeBlue{
+.darkModeBlue {
   color: rgb(77, 148, 255) !important;
 }
 
-.darkModeGreen{
+.darkModeGreen {
   color: rgb(0, 179, 95) !important;
 }
 
-.darkModeBlue:hover{
+.darkModeBlue:hover {
   color: rgb(0, 179, 95) !important;
 }
 
-#darkSwitch{
+#darkSwitch {
   position: absolute;
   top: 26%;
   right: 0;
   cursor: pointer;
 }
 
-.darkSwitchLi{
+.darkSwitchLi {
   position: relative;
   padding-left: 1.5rem;
   padding-right: 2rem;
 }
 
-.darkSwitchLi label{
+.darkSwitchLi label {
   cursor: pointer;
   font-weight: 700;
 }
@@ -80,17 +80,15 @@ body {
   background: rgb(97, 97, 97);
 }
 
-.forNavbar{
+.forNavbar {
   width: 100%;
   height: 2.5rem;
   background-color: white;
 }
 
 .home-img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 55%;
+  height: 90vh;
+  align-self: flex-end;
 }
 
 .home-heading {
@@ -105,8 +103,8 @@ body {
 }
 
 .home-left-section {
-  width: 40%;
   height: 100vh;
+  width: 550px;
 }
 
 .home-left-section a {
@@ -143,7 +141,7 @@ body {
 
   100% {
     left: 35%;
-    bottom: 60%;
+    bottom: 70%;
   }
 }
 
@@ -193,14 +191,15 @@ body {
 .highlights h1,
 .about h1,
 .contact h1,
-.postContainer h1, .notFound h1 {
+.postContainer h1,
+.notFound h1 {
   font-family: 'Righteous', cursive;
   font-size: 3.8rem;
   text-align: center;
   margin-top: 20px;
 }
 
-.highlights .main-highlights{
+.highlights .main-highlights {
   max-width: 1100px;
 }
 
@@ -218,7 +217,8 @@ body {
   font-size: 1.3rem;
 }
 
-.highlights .myHeaders a:hover, .highlights .myHeaders .current-select {
+.highlights .myHeaders a:hover,
+.highlights .myHeaders .current-select {
   color: white;
   background-color: #0d6efd;
   border-radius: 10%;
@@ -276,36 +276,42 @@ body {
   transform: scale(1.2);
 }
 
-.about .card img{
+.about .card img {
   width: 100%;
   height: 12rem;
   object-fit: cover;
 }
 
-.about .card button{
+.about .card button {
   position: absolute;
   bottom: 0;
   left: 8.4rem;
   margin-bottom: 10px;
 }
 
+.contact{
+  height: 100vh;
+  align-content: space-evenly;
+}
+
 .contact img {
-  width: 600px;
+  height: 80%;
 }
 
 .contact form {
-  width: 450px;
+  width: 40%;
 }
 
 .foot {
-  padding: 7rem 0 2.2rem;
+  padding-top: 3rem;
+  padding-bottom: 2.2rem;
 }
 
 .foot .bi-twitter {
   color: #1DA1F2;
 }
 
-.foot .social-icons{
+.foot .social-icons {
   width: 1.6rem;
   padding-bottom: 5px;
 }
@@ -328,8 +334,30 @@ body {
   object-fit: cover;
 }
 
-.notFound img{
+.notFound img {
   width: 30%;
 }
 
 /* Media Queries */
+@media only screen and (min-width: 1730px) {
+  #myHome {
+    justify-content: space-between !important;
+  }
+
+  .highlights .main-highlights {
+    max-width: 100%;
+  }
+
+  .highlights .main-highlights div {
+    width: 380px;
+    height: 280px;
+  }
+
+  #myAbout .card{
+    transform: scale(1.1) translateY(0);
+  }
+
+  #myAbout .card:hover {
+    transform: scale(1.4) translateY(-8px);
+  }
+}
