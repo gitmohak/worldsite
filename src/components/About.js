@@ -17,10 +17,10 @@ function About(props) {
                 }}
                     to={`/about/${i}`}>
                     <img src={data[i].image1} className="card-img-top" alt="Great region" />
-                    <div className={`card-body text-center ${props.mode === "dark" ? "text-light" : ""}`}>
+                    <div className={`card-body d-flex flex-wrap justify-content-center text-center ${props.mode === "dark" ? "text-light" : ""}`}>
                         <h5 className="card-title fs-3">{parse(data[i].title)}</h5>
-                        <p className="card-text">{parse(data[i].description)}</p>
-                        <button className='btn btn-primary'>Read More</button>
+                        <span className="card-text">{parse(data[i].description)}</span>
+                        <button className='btn btn-primary align-self-end'>Read More</button>
                     </div>
                 </Link>
             </div>

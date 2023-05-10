@@ -68,7 +68,7 @@ function Highlights(props) {
             <ul className='d-flex myHeaders'>
                 <li><a className={`${place === "all" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("all");
-                }}>All Countries</a></li>
+                }}>Everything</a></li>
 
                 <li><a className={`${place === "india" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
                     setPlace("india");
