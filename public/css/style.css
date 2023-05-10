@@ -80,7 +80,7 @@ body {
   background: rgb(97, 97, 97);
 }
 
-#myHome{
+#myHome {
   height: 100vh;
 }
 
@@ -185,7 +185,7 @@ body {
   height: 100vh;
 }
 
-.highlights{
+.highlights {
   padding-top: 3rem;
 }
 
@@ -286,7 +286,7 @@ body {
   margin-bottom: 10px;
 }
 
-.contact{
+.contact {
   height: 100vh;
   align-content: space-evenly;
 }
@@ -346,7 +346,7 @@ body {
     height: 280px;
   }
 
-  #myAbout .card{
+  #myAbout .card {
     transform: scale(1.1) translateY(0);
   }
 
@@ -355,20 +355,30 @@ body {
   }
 }
 
-@media only screen and (min-height: 1080px){
-#myHome, .contact {
+@media only screen and (min-height: 1080px) {
+
+  #myHome,
+  .contact {
     height: 1080px;
   }
 }
 
-@media only screen and (max-width: 1400px){
-  #myAbout, #myAllArticles{
+@media only screen and (max-width: 1400px) {
+
+  #myAbout,
+  #myAllArticles {
     max-width: 95%;
+  }
+
+  #myContact{
+    max-width: 100%;
   }
 }
 
-@media only screen and (max-width: 1340px){
-  .myNav ul li a, .myNav ul li label{
+@media only screen and (max-width: 1340px) {
+
+  .myNav ul li a,
+  .myNav ul li label {
     font-size: 18px !important;
   }
 
@@ -377,8 +387,10 @@ body {
   }
 }
 
-@media only screen and (max-width: 1265px){
-  #myAbout, #myAllArticles{
+@media only screen and (max-width: 1265px) {
+
+  #myAbout,
+  #myAllArticles {
     max-width: 90%;
     justify-content: space-evenly !important;
   }
@@ -395,52 +407,195 @@ body {
     width: 430px;
     height: 300px;
   }
+
+  #myHome{
+    max-width: 100%;
+    justify-content: space-between;
+  }
 }
 
-@media only screen and (max-width: 1135px){
-.myNav{
-  height: 3.5rem;
-  max-width: 1110px;
-}
+@media only screen and (max-width: 1135px) {
+  .myNav {
+    height: 3.5rem;
+    max-width: 1110px;
+  }
 
-#darkSwitch {
-  right: 5%;
-  top: 22px;
-}
+  #darkSwitch {
+    right: 4.5%;
+    top: 22px;
+  }
 
-.contact{
-  padding-top: 15px;
-}
+  .contact {
+    padding-top: 15px;
+  }
 
-#myAbout .card{
-  width: 32rem;
-}
-
-#myAbout{
-  max-width: 70%;
-}
-
-#myAbout .card button {
-  left: 12.7rem;
-}
-
-#myAllArticles{
-  max-width: 90%;
-  justify-content: space-between !important;
-}
-}
-
-@media only screen and (max-width: 1045px){
-  #myAllArticles .card{
+  #myAbout .card {
     width: 32rem;
   }
-  
-  #myAllArticles{
+
+  #myAbout {
+    max-width: 70%;
+  }
+
+  #myAbout .card button {
+    left: 12.7rem;
+  }
+
+  #myAllArticles {
+    max-width: 90%;
+    justify-content: space-between !important;
+  }
+
+  .home-left-section{
+    width: 480px;
+  }
+
+  .home-img{
+    height: 80%;
+  }
+}
+
+@media only screen and (max-width: 1045px) {
+  #myAllArticles .card {
+    width: 32rem;
+  }
+
+  #myAllArticles {
     max-width: 70%;
     justify-content: center !important;
   }
-  
+
   #myAllArticles .card button {
     left: 12.7rem;
+  }
+
+  #myContact{
+    justify-content: space-between;
+  }
+
+  #myContact form{
+    width: 50%;
+  }
+
+  #myContact img{
+    height: 60%;
+  }
+}
+
+@media only screen and (max-width: 991.5px) {
+  .myNav {
+    height: 50px;
+    width: 442px;
+    padding-top: 0;
+  }
+
+  .myNav ul {
+    border-radius: 20px;
+    background-color: white;
+    width: 200px;
+    margin: 10px auto 0;
+  }
+
+  .myNav .myNav-black {
+    background-color: black;
+  }
+
+  .navbar-brand {
+    padding: 0;
+    line-height: 50px;
+  }
+
+  .myNav ul li {
+    margin: 0 !important;
+  }
+
+  #darkSwitch {
+    margin: 0;
+    top: 13px;
+    left: 130px;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .navbar-toggler{
+    border: 1px solid black;
+  }
+
+  .darkNavIcon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .darkNavToggler{
+    border: 1px solid white;
+  }
+
+  .foot{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 850px){
+  .home-img{
+    display: none;
+  }
+
+  .home-left-section{
+    width: 550px;
+  }
+
+  .animation2 {
+    left: 30%;
+  }
+
+  @keyframes animation-key1 {
+    0% {
+      left: 0;
+      bottom: 70%;
+    }
+  
+    100% {
+      left: 60%;
+      bottom: 0;
+    }
+  }
+  
+  @keyframes animation-key3 {
+    0% {
+      left: 0;
+      bottom: 0;
+    }
+  
+    100% {
+      left: 60%;
+      bottom: 70%;
+    }
+  }
+
+  .about{
+    max-width: 90% !important;
+  }
+
+  .contact img{
+    display: none;
+  }
+
+  #myContact form{
+    width: 450px;
+  }
+
+  .foot .logo{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  #myAbout .card, #myAllArticles .card{
+    width: 390px !important;
+  }
+  
+  #myAbout .card button, #myAllArticles .card button {
+    left: 8.7rem;
   }
 }
