@@ -279,7 +279,7 @@ body {
   object-fit: cover;
 }
 
-.about .card-body{
+.about .card-body {
   height: 300px;
 }
 
@@ -287,8 +287,12 @@ body {
   height: 45px;
 }
 
-.about .card-body span p{
+.about .card-body span p {
   margin-bottom: 0;
+}
+
+#myAllArticles .card-body {
+  height: 360px;
 }
 
 .contact {
@@ -375,7 +379,7 @@ body {
     max-width: 95%;
   }
 
-  #myContact{
+  #myContact {
     max-width: 100%;
   }
 }
@@ -404,12 +408,20 @@ body {
     width: 432px;
   }
 
+  .about .card-body {
+    height: 270px;
+  }
+
+  #myAllArticles .card-body {
+    height: 310px;
+  }
+
   .highlights .main-highlights div {
     width: 430px;
     height: 300px;
   }
 
-  #myHome{
+  #myHome {
     max-width: 100%;
     justify-content: space-between;
   }
@@ -443,11 +455,11 @@ body {
     justify-content: space-between !important;
   }
 
-  .home-left-section{
+  .home-left-section {
     width: 480px;
   }
 
-  .home-img{
+  .home-img {
     height: 80%;
   }
 }
@@ -457,24 +469,24 @@ body {
     width: 512px;
   }
 
+  #myAllArticles .card-body {
+    height: 280px;
+  }
+
   #myAllArticles {
     max-width: 70%;
     justify-content: center !important;
   }
 
-  #myAllArticles .card button {
-    left: 203.2px;
-  }
-
-  #myContact{
+  #myContact {
     justify-content: space-between;
   }
 
-  #myContact form{
+  #myContact form {
     width: 50%;
   }
 
-  #myContact img{
+  #myContact img {
     height: 60%;
   }
 }
@@ -516,29 +528,29 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 
-  .navbar-toggler{
+  .navbar-toggler {
     border: 1px solid black;
   }
 
-  .darkNavIcon{
+  .darkNavIcon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 
-  .darkNavToggler{
+  .darkNavToggler {
     border: 1px solid white;
   }
 
-  .foot{
+  .home-img {
+    display: none;
+  }
+
+  .foot {
     max-width: 100%;
   }
 }
 
-@media only screen and (max-width: 850px){
-  .home-img{
-    display: none;
-  }
-
-  .home-left-section{
+@media only screen and (max-width: 850px) {
+  .home-left-section {
     width: 550px;
   }
 
@@ -551,76 +563,105 @@ body {
       left: 0;
       bottom: 70%;
     }
-  
+
     100% {
       left: 60%;
       bottom: 0;
     }
   }
-  
+
   @keyframes animation-key3 {
     0% {
       left: 0;
       bottom: 0;
     }
-  
+
     100% {
       left: 60%;
       bottom: 70%;
     }
   }
 
-  .about{
+  .about {
     max-width: 90% !important;
   }
 
-  .contact img{
+  .contact img {
     display: none;
   }
 
-  #myContact form{
+  #myContact form {
     width: 450px;
   }
 
-  .foot .logo{
+  .foot .logo {
     display: none;
   }
 
-  .contact form{
+  .contact form {
     display: flex;
     flex-flow: column wrap;
   }
 
-  .contact button{
+  .contact button {
     margin: auto;
     margin-top: 10px;
   }
 }
 
-@media only screen and (max-width: 600px){
-  html{
+@media only screen and (max-width: 600px) {
+  html {
     font-size: 14px;
   }
 
-  #myAbout .card, #myAllArticles .card{
+  #myAbout .card,
+  #myAllArticles .card {
     width: 390px !important;
   }
 
-  .about .card-body{
+  .about .card-body {
     height: 240px;
   }
-  
- #myAllArticles .card button {
-    left: 139.2px;
+
+  #myAllArticles .card-body {
+    height: 250px;
   }
 
-  .myNav{
+  .myNav {
     width: 100vw;
   }
 }
 
-@media only screen and (max-width: 359px){
-  .highlights .myHeaders a{
+@media only screen and (max-width: 415px) {
+  .highlights .myHeaders a {
     font-size: 1rem;
+  }
+
+  @keyframes animation-key2 {
+    from {
+      transform: rotate(0deg) translateX(70px) rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+  }
+
+  .animation2 {
+    animation: animation-key2 15s linear 0s infinite alternate;
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .home-heading {
+    font-size: 3rem;
+  }
+
+  .highlights h1,
+  .about h1,
+  .contact h1,
+  .postContainer h1,
+  .notFound h1 {
+    font-size: 3rem;
   }
 }

@@ -17,10 +17,10 @@ function AllArticles(props) {
             }}
                 to={`/articles/${i}`}>
                 <img src={data[i].image1} className="card-img-top" alt="Beautiful Article" />
-                <div className={`card-body text-center ${props.mode === "dark" ? "text-light" : ""}`}>
+                <div className={`card-body d-flex flex-wrap justify-content-center text-center ${props.mode === "dark" ? "text-light" : ""}`}>
                     <h5 className="card-title fs-3">{data[i].title}</h5>
                     <span className="card-text">{parse(data[i].description)}</span>
-                    <button className='btn btn-primary'>Read More</button>
+                    <button className='btn btn-primary align-self-end'>Read More</button>
                 </div>
             </Link>
         </div>
