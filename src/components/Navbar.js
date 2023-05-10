@@ -4,11 +4,23 @@ import doScrollSpy from "../methods/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
 
 function Navbar(props) {
-    const [markSection, setmarkSection] = useState("myHome");
+    const [markSection, setmarkSection] = useState("");
     const { setstopScroll } = useContext(stopScrollContext);
 
     const navigate = useNavigate();
     const location = useLocation();
+
+    window.onload = () => {
+        if (location.pathname === "/") {
+            setmarkSection("myHome");
+        }
+        else if (location.pathname === "/all") {
+            setmarkSection("myAllArticles");
+        }
+        else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about") {
+            setmarkSection(null);
+        }
+    }
 
     window.onscroll = () => {
         doScrollSpy(location, setmarkSection);
@@ -26,7 +38,9 @@ function Navbar(props) {
             document.body.style.backgroundColor = "white";
         }
 
-        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+        if (window.innerWidth <= 991.5) {
+            document.getElementsByClassName("navbar-toggler-icon")[0].click();
+        }
     }
 
     const doDecoration = (ms) => {
@@ -72,7 +86,10 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
                                     setmarkSection("myHome");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
 
@@ -83,7 +100,10 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
 
@@ -94,7 +114,10 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
 
@@ -105,7 +128,10 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
 
@@ -116,7 +142,10 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
 
@@ -128,7 +157,10 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     window.scrollTo(0, 0);
                                     setmarkSection("myAllArticles");
-                                    document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    
+                                    if (window.innerWidth <= 991.5) {
+                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                             </li>
