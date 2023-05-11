@@ -3,52 +3,15 @@ import Home from './components/Home';
 import Featured from './components/Featured';
 import Highlights from './components/Highlights';
 import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import SinglePost from './components/SinglePost';
 import AllArticles from './components/AllArticles';
 import NoPage from './components/NoPage';
 
 import { Routes, Route } from "react-router-dom";
-import articlesData from "./data/postsData.json";
-import aboutData from "./data/aboutData.json";
-import { useState } from 'react';
-
 import StopScrollState from './contexts/StopScrollState';
+import useApp from './methods/useApp';
 
 function App() {
-  const [mode, setMode] = useState("light");
-  let arr = [];
-  let arr2 = [];
-
-  const lowerSection = <>
-    <Contact mode={mode} />
-    <Footer mode={mode} />
-  </>
-
-  for (let i in articlesData) {
-    arr.push(<Route key={i} exact path={`/articles/${i}`} element={
-      <>
-        <Navbar mode={mode} setMode={setMode} />
-        <SinglePost mode={mode} articleNum={i} />
-        <Highlights mode={mode} />
-        <About mode={mode} />
-        {lowerSection}
-      </>
-    } />);
-  }
-
-  for (let i in aboutData) {
-    arr2.push(<Route key={i} exact path={`/about/${i}`} element={
-      <>
-        <Navbar mode={mode} setMode={setMode} />
-        <SinglePost mode={mode} aboutNum={i} />
-        <Featured />
-        <Highlights mode={mode} />
-        {lowerSection}
-      </>
-    } />);
-  }
+  const {lowerSection, mode, setMode, arr, arr2} = useApp();
 
   return (
     <StopScrollState>

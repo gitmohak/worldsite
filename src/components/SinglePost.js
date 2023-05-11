@@ -1,31 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import parse from 'html-react-parser';
 import useSinglePost from '../methods/useSinglePost';
-// import articleData from "../data/postsData.json";
-// import aboutData from "../data/aboutData.json";
-// import stopScrollContext from '../contexts/stopScrollContext';
 
 function SinglePost(props) {
-  //   const { stopScroll } = useContext(stopScrollContext);
-  //   let postNum, date, data;
-
-  //   if (props.articleNum) {
-  //     data = articleData;
-  //     postNum = props.articleNum;
-  //     date = new Date(data[postNum].datePublished).toUTCString().slice(0, 16);
-  //   }
-
-  //   else if (props.aboutNum) {
-  //     data = aboutData;
-  //     postNum = props.aboutNum;
-  //   }
-
-  //   setTimeout(() => {
-  //     if (stopScroll === false) {
-  //         window.scrollTo(0, 0);
-  //     }
-  // }, 0);
-
   const {postNum, date, data} = useSinglePost(props.articleNum, props.aboutNum);
 
   return (
