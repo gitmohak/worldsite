@@ -27,7 +27,7 @@ function Contact(props) {
                     <span hidden id="nameErrorText" className='text-danger fw-bold fst-italic'> Only alphabets and spaces</span>
                     </label>
 
-                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} maxLength={70} />
+                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} maxLength={70} pattern='[a-zA-Z\s]+' />
                 </div>
 
                 <div className="mb-3">
