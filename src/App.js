@@ -9,7 +9,7 @@ import SinglePost from './components/SinglePost';
 import AllArticles from './components/AllArticles';
 import NoPage from './components/NoPage';
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import articlesData from "./data/postsData.json";
 import aboutData from "./data/aboutData.json";
 import { useState } from 'react';
@@ -25,15 +25,6 @@ function App() {
     <Contact mode={mode} />
     <Footer mode={mode} />
   </>
-
-  const location = useLocation();
-
-  window.onload = () => {
-    if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
-
-      document.getElementById(`${location.hash.slice(1)}-link`).click();
-    }
-  }
 
   for (let i in articlesData) {
     arr.push(<Route exact path={`/articles/${i}`} element={

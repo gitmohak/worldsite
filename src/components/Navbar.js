@@ -14,12 +14,18 @@ function Navbar(props) {
     window.onload = () => {
         if (location.pathname === "/") {
             setmarkSection("myHome");
+            console.log("Navbar is called")
         }
         else if (location.pathname === "/all") {
             setmarkSection("myAllArticles");
         }
         else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about") {
             setmarkSection(null);
+        }
+
+        if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
+
+            document.getElementById(`${location.hash.slice(1)}-link`).click();
         }
     }
 
@@ -87,7 +93,7 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
                                     setmarkSection("myHome");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
@@ -101,7 +107,7 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
@@ -115,7 +121,7 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
@@ -129,7 +135,7 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
@@ -143,7 +149,7 @@ function Navbar(props) {
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
@@ -158,7 +164,7 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     window.scrollTo(0, 0);
                                     setmarkSection("myAllArticles");
-                                    
+
                                     if (window.innerWidth <= 991.5) {
                                         ref.current.click();
                                     }
