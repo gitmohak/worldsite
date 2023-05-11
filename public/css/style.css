@@ -298,10 +298,11 @@ body {
 
 .contact {
   align-content: center;
+  padding-top: 20px;
 }
 
 .contact img {
-  width: 35%;
+  width: 30%;
   align-self: center;
 }
 
@@ -317,6 +318,7 @@ body {
 
 .foot .bi-twitter {
   color: #1DA1F2;
+  font-size: 2rem;
 }
 
 .foot .social-icons {
@@ -432,10 +434,6 @@ body {
     top: 22px;
   }
 
-  .contact {
-    padding-top: 15px;
-  }
-
   #myAbout .card {
     width: 512px;
   }
@@ -481,7 +479,7 @@ body {
   }
 
   #myContact img {
-    height: 60%;
+    width: 40%;
   }
 }
 
@@ -603,7 +601,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
   html {
     font-size: 14px;
   }
@@ -623,6 +621,10 @@ body {
 
   .myNav {
     width: 100vw;
+  }
+
+  .postContainer img {
+    width: 100%;
   }
 }
 
@@ -649,18 +651,26 @@ body {
     width: 95%;
   }
 
-  #myAbout .card {
+  .about .card {
     transform: scale(1) translateY(0);
   }
 
-  #myAbout .card:hover {
+  .about .card:hover {
     transform: scale(1.15) translateY(-8px);
+  }
+
+  #myAllArticles .card-body {
+    height: 320px;
   }
 
   .contact {
     height: auto;
     align-content: center;
-    padding-top: 18px;
+  }
+
+  .foot *{
+    width: 100%;
+    text-align: center;
   }
 }
 

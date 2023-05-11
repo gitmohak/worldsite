@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import doScrollSpy from "../methods/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
@@ -6,6 +6,7 @@ import stopScrollContext from '../contexts/stopScrollContext';
 function Navbar(props) {
     const [markSection, setmarkSection] = useState("");
     const { setstopScroll } = useContext(stopScrollContext);
+    const ref = useRef(null);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,7 +40,7 @@ function Navbar(props) {
         }
 
         if (window.innerWidth <= 991.5) {
-            document.getElementsByClassName("navbar-toggler-icon")[0].click();
+            ref.current.click();
         }
     }
 
@@ -76,7 +77,7 @@ function Navbar(props) {
                         className={`navbar-brand ${props.mode === "light" ? "text-success" : "darkModeGreen"}`} href="#myHome">World Site</a>
 
                     <button className={`navbar-toggler ${props.mode === "dark" ? "darkNavToggler" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className={`border-black navbar-toggler-icon ${props.mode === "dark" ? "darkNavIcon" : ""}`}></span>
+                        <span ref={ref} className={`border-black navbar-toggler-icon ${props.mode === "dark" ? "darkNavIcon" : ""}`}></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className={`navbar-nav d-flex align-items-center me-auto mb-2 mb-lg-0 ${props.mode === "dark" ? "myNav-black" : ""}`}>
@@ -88,7 +89,7 @@ function Navbar(props) {
                                     setmarkSection("myHome");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
@@ -102,7 +103,7 @@ function Navbar(props) {
                                     navigate("/");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
@@ -116,7 +117,7 @@ function Navbar(props) {
                                     navigate("/");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
@@ -130,7 +131,7 @@ function Navbar(props) {
                                     navigate("/");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
@@ -144,7 +145,7 @@ function Navbar(props) {
                                     navigate("/");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
@@ -159,7 +160,7 @@ function Navbar(props) {
                                     setmarkSection("myAllArticles");
                                     
                                     if (window.innerWidth <= 991.5) {
-                                        document.getElementsByClassName("navbar-toggler-icon")[0].click();
+                                        ref.current.click();
                                     }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
