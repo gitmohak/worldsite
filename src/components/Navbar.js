@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import doScrollSpy from "../methods/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
+import { locationUI, darkModeFunc, doDecoration } from '../methods/navbarMethods';
 
 function Navbar(props) {
     const [markSection, setmarkSection] = useState("");
@@ -12,61 +13,11 @@ function Navbar(props) {
     const location = useLocation();
 
     window.onload = () => {
-        if (location.pathname === "/") {
-            setmarkSection("myHome");
-        }
-        else if (location.pathname === "/all") {
-            setmarkSection("myAllArticles");
-        }
-        else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about") {
-            setmarkSection(null);
-        }
-
-        if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
-
-            document.getElementById(`${location.hash.slice(1)}-link`).click();
-        }
+        locationUI(location, setmarkSection);
     }
 
     window.onscroll = () => {
         doScrollSpy(location, setmarkSection);
-    }
-
-    const darkModeFunc = () => {
-        setstopScroll(true);
-
-        if (props.mode === "light") {
-            props.setMode("dark");
-            document.body.style.backgroundColor = "black";
-        }
-        else {
-            props.setMode("light");
-            document.body.style.backgroundColor = "white";
-        }
-
-        if (window.innerWidth <= 991.5) {
-            ref.current.click();
-        }
-    }
-
-    const doDecoration = (ms) => {
-        let design = "";
-
-        if (markSection === ms) {
-            if (props.mode === "light") {
-                design = "text-decoration-underline text-success";
-            }
-            else if (props.mode === "dark") {
-                design = "text-decoration-underline darkModeGreen";
-            }
-        }
-
-        if (props.mode === "light") {
-            return "lightModeBlue " + design;
-        }
-        else if (props.mode === "dark") {
-            return "darkModeBlue " + design;
-        }
     }
 
     return (
@@ -97,7 +48,7 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHome")}`} aria-current="page" href="#myHome">Home</a>
+                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myHome")}`} aria-current="page" href="#myHome">Home</a>
 
                             </li>
 
@@ -111,7 +62,7 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
+                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
 
                             </li>
 
@@ -125,7 +76,7 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration("myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
+                                    className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
 
                             </li>
 
@@ -139,7 +90,7 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
 
                             </li>
 
@@ -153,7 +104,7 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
 
                             </li>
 
@@ -168,13 +119,16 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration("myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                             </li>
 
                             <li className="nav-item form-check form-switch darkSwitchLi">
-                                <label className={`nav-link text-center fs-4 form-check-label ${doDecoration("")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                                <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
 
-                                <input onClick={darkModeFunc} className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
+                                <input onClick={() => {
+                                    darkModeFunc (setstopScroll, props.mode, props.setMode, ref);
+                                }}
+                                className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                             </li>
                         </ul>
                     </div>

@@ -5,6 +5,7 @@ import aboutData from "../data/aboutData.json";
 import stopScrollContext from '../contexts/stopScrollContext';
 
 function SinglePost(props) {
+  const { stopScroll } = useContext(stopScrollContext);
   let postNum, date, data;
 
   if (props.articleNum) {
@@ -17,8 +18,6 @@ function SinglePost(props) {
     data = aboutData;
     postNum = props.aboutNum;
   }
-
-  const { stopScroll } = useContext(stopScrollContext);
 
   setTimeout(() => {
     if (stopScroll === false) {
