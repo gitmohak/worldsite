@@ -12,6 +12,13 @@ function Contact(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const name = document.getElementById("senderName").value;
+        if(!name.match(/^[a-z\s]+$/gi)){
+            document.getElementById("nameErrorText").hidden = false;
+            return false;
+        }
+
         modalRef.current.click();
 
         setresultText({
@@ -34,36 +41,41 @@ function Contact(props) {
             });
 
         setTimeout(() => {
+            document.getElementById("nameErrorText").hidden = true;
             document.getElementById("senderName").value = "";
             document.getElementById("senderEmail").value = "";
             document.getElementById("subject").value = "";
             document.getElementById("sender-msg").value = "";
-        }, 0)
+        }, 0);
     }
 
     return (
         <section id="myContact" className='contact container d-flex flex-wrap justify-content-around'>
             <h1 className={`w-100 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Contact us</h1>
             <img src="/images/contactTall.png" alt="Contact Us with message" />
-            <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm} onSubmit={handleSubmit}>
+            <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm} onSubmit={handleSubmit} method='post'>
                 <div className="mb-3">
-                    <label htmlFor="senderName" className="form-label">Name</label>
-                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} />
+                    <label htmlFor="senderName" className="form-label">Name
+                    
+                    <span hidden id="nameErrorText" className='text-danger fw-bold fst-italic'> Only alphabets and spaces</span>
+                    </label>
+
+                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} maxLength={70} />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="senderEmail" className="form-label">Email address</label>
-                    <input type="email" name="sender_email" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderEmail" aria-describedby="emailHelp" required minLength={5} />
+                    <input type="email" name="sender_email" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderEmail" aria-describedby="emailHelp" required minLength={5} maxLength={100} />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="subject" className="form-label">Subject</label>
-                    <input type="text" name="subject" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="subject" aria-describedby="subjectHelp" required minLength={5} />
+                    <input type="text" name="subject" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="subject" aria-describedby="subjectHelp" required minLength={5} maxLength={150} />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="sender-msg" className="form-label">Message</label>
-                    <textarea className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} name="message" id="sender-msg" aria-describedby="messageHelp" required minLength={10} rows={6} />
+                    <textarea className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} name="message" id="sender-msg" aria-describedby="messageHelp" required minLength={10} rows={6} maxLength={5000} />
                 </div>
 
                 <button className="btn btn-lg btn-primary" type="submit">

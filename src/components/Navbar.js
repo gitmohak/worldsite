@@ -14,7 +14,6 @@ function Navbar(props) {
     window.onload = () => {
         if (location.pathname === "/") {
             setmarkSection("myHome");
-            console.log("Navbar is called")
         }
         else if (location.pathname === "/all") {
             setmarkSection("myAllArticles");
