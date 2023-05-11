@@ -123,7 +123,7 @@ function Navbar(props) {
                             </li>
 
                             <li className="nav-item form-check form-switch darkSwitchLi">
-                                <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" for="darkSwitch">Dark Mode</label>
+                                <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" htmlFor="darkSwitch">Dark Mode</label>
 
                                 <input onClick={() => {
                                     darkModeFunc (setstopScroll, props.mode, props.setMode, ref);

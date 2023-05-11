@@ -27,7 +27,7 @@ function App() {
   </>
 
   for (let i in articlesData) {
-    arr.push(<Route exact path={`/articles/${i}`} element={
+    arr.push(<Route key={i} exact path={`/articles/${i}`} element={
       <>
         <Navbar mode={mode} setMode={setMode} />
         <SinglePost mode={mode} articleNum={i} />
@@ -39,7 +39,7 @@ function App() {
   }
 
   for (let i in aboutData) {
-    arr2.push(<Route exact path={`/about/${i}`} element={
+    arr2.push(<Route key={i} exact path={`/about/${i}`} element={
       <>
         <Navbar mode={mode} setMode={setMode} />
         <SinglePost mode={mode} aboutNum={i} />

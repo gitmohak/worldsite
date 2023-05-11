@@ -32,7 +32,7 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
 
             if (i === j) {
                 arr.push(
-                    <div onMouseEnter={() => {
+                    <div key={i} onMouseEnter={() => {
                         myEnter(setHover, i);
                     }}
 

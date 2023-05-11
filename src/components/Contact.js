@@ -51,7 +51,7 @@ function Contact(props) {
                 <button hidden ref={modalRef} data-bs-toggle="modal" data-bs-target="#formModal"></button>
             </form>
 
-            <div className="modal fade" data-bs-backdrop="static" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div className="modal fade" data-bs-backdrop="static" id="formModal" tabIndex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
 
