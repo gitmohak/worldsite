@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
+import handleSubmit from '../methods/handleSubmit';
 
 function Contact(props) {
     const contactForm = useRef();
@@ -9,51 +10,17 @@ function Contact(props) {
         title: "Please Wait",
         description: "Your message is being delivered."
     });
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById("senderName").value;
-        if(!name.match(/^[a-z\s]+$/gi)){
-            document.getElementById("nameErrorText").hidden = false;
-            return false;
-        }
-
-        modalRef.current.click();
-
-        setresultText({
-            title: "Please Wait",
-            description: "Your message is being delivered."
-        });
-
-        emailjs.sendForm('service_0wcmgnv', 'template_ulzc5a7', contactForm.current, 'O0wEfR0CHzgJz00pr')
-            .then(() => {
-                setresultText({
-                    title: "SUCCESS",
-                    description: "Your message has been delivered. We will respond back shortly."
-                });
-
-            }, (error) => {
-                setresultText({
-                    title: "ERROR",
-                    description: `A problem has occurred while sending your message - ${error.text}`
-                });
-            });
-
-        setTimeout(() => {
-            document.getElementById("nameErrorText").hidden = true;
-            document.getElementById("senderName").value = "";
-            document.getElementById("senderEmail").value = "";
-            document.getElementById("subject").value = "";
-            document.getElementById("sender-msg").value = "";
-        }, 0);
-    }
-
     return (
         <section id="myContact" className='contact container d-flex flex-wrap justify-content-around'>
             <h1 className={`w-100 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Contact us</h1>
             <img src="/images/contactTall.png" alt="Contact Us with message" />
-            <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm} onSubmit={handleSubmit} method='post'>
+            
+            <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm}
+            
+            onSubmit={(event) =>{
+                handleSubmit(event, modalRef, setresultText, emailjs, contactForm);
+            }} method='post'>
+
                 <div className="mb-3">
                     <label htmlFor="senderName" className="form-label">Name
                     
