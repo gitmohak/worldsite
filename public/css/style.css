@@ -82,6 +82,7 @@ body {
 
 #myHome {
   height: 100vh;
+  max-height: 1080px;
 }
 
 .home-img {
@@ -296,16 +297,17 @@ body {
 }
 
 .contact {
-  height: 100vh;
-  align-content: space-evenly;
+  align-content: center;
 }
 
 .contact img {
-  height: 80%;
+  width: 35%;
+  align-self: center;
 }
 
 .contact form {
   width: 40%;
+  align-self: center;
 }
 
 .foot {
@@ -361,14 +363,6 @@ body {
 
   #myAbout .card:hover {
     transform: scale(1.4) translateY(-8px);
-  }
-}
-
-@media only screen and (min-height: 1080px) {
-
-  #myHome,
-  .contact {
-    height: 1080px;
   }
 }
 
@@ -632,11 +626,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 415px) {
-  .highlights .myHeaders a {
-    font-size: 1rem;
-  }
-
+@media only screen and (max-width: 500px) {
   @keyframes animation-key2 {
     from {
       transform: rotate(0deg) translateX(70px) rotate(0deg);
@@ -649,6 +639,28 @@ body {
 
   .animation2 {
     animation: animation-key2 15s linear 0s infinite alternate;
+  }
+
+  .highlights .myHeaders a {
+    font-size: 1rem;
+  }
+
+  .highlights .main-highlights div {
+    width: 95%;
+  }
+
+  #myAbout .card {
+    transform: scale(1) translateY(0);
+  }
+
+  #myAbout .card:hover {
+    transform: scale(1.15) translateY(-8px);
+  }
+
+  .contact {
+    height: auto;
+    align-content: center;
+    padding-top: 18px;
   }
 }
 
@@ -663,5 +675,27 @@ body {
   .postContainer h1,
   .notFound h1 {
     font-size: 3rem;
+  }
+
+  .highlights .main-highlights div {
+    height: 200px;
+  }
+
+  .highlights .myHeaders a, .about span{
+    font-size: 0.95rem;
+  }
+
+  .about .card button {
+    height: 35px;
+  }
+
+  .about .card-body {
+    height: 310px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about .card img {
+    height: 130px;
   }
 }
