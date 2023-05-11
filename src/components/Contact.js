@@ -22,12 +22,9 @@ function Contact(props) {
             }} method='post'>
 
                 <div className="mb-3">
-                    <label htmlFor="senderName" className="form-label">Name
-                    
-                    <span hidden id="nameErrorText" className='text-danger fw-bold fst-italic'> Only alphabets and spaces</span>
-                    </label>
+                    <label htmlFor="senderName" className="form-label">Name</label>
 
-                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} maxLength={70} pattern='[a-zA-Z\s]+' />
+                    <input type="text" name="sender_name" className={`form-control ${props.mode === "dark" ? "bg-black border-white text-light" : ""}`} id="senderName" aria-describedby="nameHelp" required minLength={5} maxLength={70} pattern='[a-zA-Z\s]+' title="Only Alphabets and Spaces" />
                 </div>
 
                 <div className="mb-3">
