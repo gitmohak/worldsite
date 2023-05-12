@@ -44,9 +44,9 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
                             setstopScroll(false);
                         }}
                             to={`/articles/${i}`}>
-                            <h3 className='d-flex align-items-center justify-content-center'>{data[i].region}</h3>
+                            <h3 className={`${hover === i ? "d-flex" : "d-none"} align-items-center justify-content-center`}>{data[i].region}</h3>
                         </Link>
-                        <img className={`w-100 h-100 ${hover === i ? "hoverEffect" : ""}`} src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
+                        <img className="w-100 h-100" src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
                     </div>
                 )
             }

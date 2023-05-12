@@ -11,7 +11,10 @@ export const locationUI = (location, setmarkSection) =>{
 
     if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
 
-        document.getElementById(`${location.hash.slice(1)}-link`).click();
+        let a = document.createElement("a");
+        a.href = location.hash;
+        a.click();
+        a.remove();
     }
 }
 
@@ -21,10 +24,22 @@ export const darkModeFunc = (setstopScroll, mode, setMode, ref) => {
     if (mode === "light") {
         setMode("dark");
         document.body.style.backgroundColor = "black";
+
+        document.getElementById("myCSS").innerHTML = `input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0 30px black inset !important;
+        }
+        
+        input:-webkit-autofill{
+          -webkit-text-fill-color: #f8f9fa !important;
+        }`;
     }
     else {
         setMode("light");
         document.body.style.backgroundColor = "white";
+        document.getElementById("myCSS").innerHTML = "";
     }
 
     if (window.innerWidth <= 991.5) {

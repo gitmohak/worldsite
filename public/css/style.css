@@ -238,11 +238,6 @@ body {
   object-fit: cover;
   border-radius: 10%;
   position: absolute;
-  z-index: 1;
-}
-
-.highlights .main-highlights .hoverEffect {
-  z-index: -1;
 }
 
 .highlights .main-highlights h3 {
@@ -256,6 +251,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
+  z-index: 1;
 }
 
 .about .card {
