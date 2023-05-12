@@ -10,14 +10,14 @@ const handleSubmit = (event, modalRef, setresultText, emailjs, contactForm) => {
     emailjs.sendForm('service_0wcmgnv', 'template_ulzc5a7', contactForm.current, 'O0wEfR0CHzgJz00pr')
         .then(() => {
             setresultText({
-                title: "SUCCESS",
-                description: "Your message has been delivered. We will respond back shortly."
+                title: "<span className='text-success'>SUCCESS</span>",
+                description: "<span className='text-success fw-bold'>Your message has been delivered. We will respond back shortly.</span>"
             });
 
         }, (error) => {
             setresultText({
-                title: "ERROR",
-                description: `A problem has occurred while sending your message - ${error.text}`
+                title: "<span className='text-danger'>ERROR</span>",
+                description: `<span className='text-danger fw-bold'>A problem has occurred while sending your message - </span>${error.text}`
             });
         });
 

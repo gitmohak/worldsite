@@ -311,6 +311,10 @@ body {
   align-self: center;
 }
 
+.dark-modal-bg{
+  background-color: rgb(56, 56, 56);
+}
+
 .foot {
   padding-top: 48px;
   padding-bottom: 35.2px;

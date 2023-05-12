@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
 import handleSubmit from '../methods/handleSubmit';
+import parse from 'html-react-parser';
 
 function Contact(props) {
     const contactForm = useRef();
@@ -50,15 +51,15 @@ function Contact(props) {
 
             <div className="modal fade" data-bs-backdrop="static" id="formModal" tabIndex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content">
+                    <div className={`modal-content ${props.mode === "dark" ? "text-light dark-modal-bg" : ""}`}>
 
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="formModalLabel">{resultText.title}</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h1 className="modal-title fs-5" id="formModalLabel">{parse(resultText.title)}</h1>
+                            <button type="button" className={`btn-close ${props.mode === "dark" ? "btn-close-white" : ""}`} data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
                         <div className="modal-body">
-                            {resultText.description}
+                            {parse(resultText.description)}
                         </div>
 
                         <div className="modal-footer">
