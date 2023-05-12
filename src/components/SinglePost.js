@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import useSinglePost from '../methods/useSinglePost';
 
 function SinglePost(props) {
-  const {postNum, date, data} = useSinglePost(props.articleNum, props.aboutNum);
+  const { postNum, date, data } = useSinglePost(props.articleNum, props.aboutNum);
 
   return (
     <article className={`postContainer mt-5 ${props.mode === "dark" ? "text-light" : ""}`}>
@@ -16,9 +16,8 @@ function SinglePost(props) {
         <img src={data[postNum].image1} alt="Wonderful Article" />
         <img className='mt-5 mb-4' src={data[postNum].image2} alt="Superb Article" />
       </div>
-      <p>
-        {parse(data[postNum].text)}
-      </p>
+
+      {parse(data[postNum].text)}
     </article>
   )
 }
