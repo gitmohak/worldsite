@@ -289,7 +289,7 @@ body {
 }
 
 #myAllArticles .card-body {
-  height: 320px;
+  height: 290px;
 }
 
 .contact {
@@ -409,7 +409,7 @@ body {
   }
 
   #myAllArticles .card-body {
-    height: 290px;
+    height: 260px;
   }
 
   .highlights .main-highlights div {
@@ -462,7 +462,7 @@ body {
   }
 
   #myAllArticles .card-body {
-    height: 260px;
+    height: 230px;
   }
 
   #myAllArticles {
@@ -615,10 +615,6 @@ body {
     height: 240px;
   }
 
-  #myAllArticles .card-body {
-    height: 230px;
-  }
-
   .myNav {
     width: 100vw;
   }
@@ -660,7 +656,7 @@ body {
   }
 
   #myAllArticles .card-body {
-    height: 300px;
+    height: 260px;
   }
 
   .contact {
