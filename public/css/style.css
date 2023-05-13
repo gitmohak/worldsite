@@ -454,6 +454,10 @@ body {
   .home-img {
     height: 80%;
   }
+
+  .notFound img {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 1045px) {
@@ -598,6 +602,10 @@ body {
   .contact button {
     margin: auto;
     margin-top: 10px;
+  }
+
+  .notFound img {
+    width: 60%;
   }
 }
 

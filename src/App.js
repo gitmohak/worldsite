@@ -11,7 +11,7 @@ import StopScrollState from './contexts/StopScrollState';
 import useApp from './methods/useApp';
 
 function App() {
-  const {lowerSection, mode, setMode, arr, arr2} = useApp();
+  const { lowerSection, mode, setMode, arr, arr2 } = useApp();
 
   return (
     <StopScrollState>
