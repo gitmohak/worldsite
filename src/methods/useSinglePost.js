@@ -10,7 +10,7 @@ function useSinglePost(articleNum, aboutNum) {
     if (articleNum) {
         data = articleData;
         postNum = articleNum;
-        date = new Date(data[postNum].datePublished).toUTCString().slice(0, 16);
+        date = new Date(data[postNum].date).toUTCString().slice(0, 16);
     }
 
     else if (aboutNum) {
