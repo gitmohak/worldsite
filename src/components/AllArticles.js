@@ -1,3 +1,10 @@
+// This component represents the "All Articles" page.
+
+/* useContext - for Context API
+data - for "All Articles" page from a json file
+HTML parser library - to interpret HTML string input
+React Router - to create links in the website
+StopScrollContext - to stop scrolling when the user enables dark mode */
 import React, { useContext } from 'react';
 import data from "../data/postsData.json";
 import parse from 'html-react-parser';
@@ -7,6 +14,7 @@ import stopScrollContext from '../contexts/stopScrollContext';
 function AllArticles(props) {
     const { stopScroll, setstopScroll } = useContext(stopScrollContext);
 
+    // Process JSX to fill useful information and generate the "All Articles" section cards.
     let arr = [];
     for (let i = 0; i < data.length; i++) {
 
@@ -26,6 +34,7 @@ function AllArticles(props) {
         </div>
     }
 
+    // User should be at the top of the page initially.
     setTimeout(() => {
         if (stopScroll === false) {
             window.scrollTo(0, 0);
@@ -33,6 +42,7 @@ function AllArticles(props) {
     }, 0);
 
     return (
+        // JSX for "All Articles" page.
         <section id="myAllArticles" className='container d-flex flex-wrap justify-content-between about mb-5'>
             <h1 className={`w-100 mt-5 mb-0 ${props.mode === "dark" ? "text-light" : ""}`}>Articles for your Liking</h1>
             {arr}

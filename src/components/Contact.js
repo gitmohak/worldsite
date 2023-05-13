@@ -1,3 +1,6 @@
+// This component represents the "Contact Us" section.
+
+// EmailJS library (to send message to the administrator when the form is submitted), useRef (to create required references to modal and form), useState (to create result of the form), handleSubmit (custom function )
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
 import handleSubmit from '../methods/handleSubmit';
