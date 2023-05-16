@@ -5,7 +5,7 @@ aboutData.json - a prominent data file created by me to hold the data for the Ab
 HTML parser library - to interpret HTML string input
 
 React Router - to create links in the website
-StopScrollContext - to stop scrolling when the user enables dark mode */
+stopScrollContext - to stop scrolling when the user enables dark mode */
 import React, { useContext } from 'react';
 import data from "../data/aboutData.json";
 import parse from 'html-react-parser';

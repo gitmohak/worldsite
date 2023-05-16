@@ -363,7 +363,7 @@ body {
 }
 
 /* Media Queries for various devices - large, medium, or smaller (generally mobile) devices.
-Keep the website proper on large devices */
+The website should not be problematic on large devices */
 @media only screen and (min-width: 1730px) {
   #myHome {
     justify-content: space-between !important;
