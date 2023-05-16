@@ -1,6 +1,11 @@
-// This component represents the "About Us" section.
+// This component represents the "About Me" section.
 
-// useContext (for Context API), data (for About Us page from a json file), HTML parser library (to interpret HTML string input), React Router (to create links in the website), and StopScrollContext (to stop scrolling when the user enables dark mode)
+/* useContext - for Context API
+aboutData.json - a prominent data file created by me to hold the data for the About section
+HTML parser library - to interpret HTML string input
+
+React Router - to create links in the website
+StopScrollContext - to stop scrolling when the user enables dark mode */
 import React, { useContext } from 'react';
 import data from "../data/aboutData.json";
 import parse from 'html-react-parser';
@@ -34,7 +39,7 @@ function About(props) {
     return (
         // JSX for About Section
         <section id='myAbout' className='container d-flex flex-wrap justify-content-between about'>
-            <h1 className={`w-100 mt-5 mb-0 ${props.mode === "dark" ? "text-light" : ""}`}>About us</h1>
+            <h1 className={`w-100 mt-5 mb-0 ${props.mode === "dark" ? "text-light" : ""}`}>About me</h1>
             {arr}
         </section>
     )

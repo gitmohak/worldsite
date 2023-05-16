@@ -1,3 +1,4 @@
+// A custom method that is called when the user submits the "Contact me" form. It actually sends me an email, provides functionality to the modal displaying the appropriate message, and does a few cleanup tasks.
 const handleSubmit = (event, modalRef, setresultText, emailjs, contactForm) => {
     event.preventDefault();
     modalRef.current.click();
@@ -7,6 +8,7 @@ const handleSubmit = (event, modalRef, setresultText, emailjs, contactForm) => {
         description: "Your message is being delivered."
     });
 
+    // EmailJS to send the information to my Email ID.
     emailjs.sendForm('service_0wcmgnv', 'template_ulzc5a7', contactForm.current, 'O0wEfR0CHzgJz00pr')
         .then(() => {
             setresultText({

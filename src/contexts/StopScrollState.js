@@ -1,3 +1,4 @@
+// Creating the state for the stopScrollContext using Context API.
 import { useState } from "react";
 import stopScrollContext from "./stopScrollContext";
 

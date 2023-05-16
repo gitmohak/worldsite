@@ -1,3 +1,8 @@
+/* A few custom Navbar methods.
+locationUI - a custom method that intitially highlights the user position according to URL location and redirects the user to the correct section if the user directly wants to go there using URL.
+
+darkModeFunc - a custom Navbar method to toggle dark mode of the website.
+doDecoration - to decorate the correct point of the Navbar. */
 export const locationUI = (location, setmarkSection) =>{
     if (location.pathname === "/") {
         setmarkSection("myHome");

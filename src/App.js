@@ -1,6 +1,6 @@
 /* This project has been created by Mohak Arora
 
-The Application extensively uses various advanced technologies including HTML, CSS, Bootstrap, JavaScript, React, and useful React libraries. Additionally, this website is fully responsive. The website (World Site) is about showing useful travel information to the world. This section is very important. It takes various components of the website and combines them together in a structured manner for further interpretation.
+The Application extensively uses various advanced technologies including HTML, CSS, Bootstrap, JavaScript, React, Node Package Manager, and useful React libraries. Additionally, this website is fully responsive. The website (World Site) is about showing useful travel information to the world. This section is very important. It takes various components of the website and combines them together in a structured manner for further interpretation.
 */
 
 // Various components required for this file.
@@ -12,7 +12,9 @@ import About from './components/About';
 import AllArticles from './components/AllArticles';
 import NoPage from './components/NoPage';
 
-// React Router (to create various links for the website), StopScrollContext (to stop scrolling when the user enables dark mode), and useApp (custom React Hook function to provide useful settings and routes)
+/* React Router - to create various links for the website
+StopScrollContext - to stop scrolling when the user enables dark mode
+useApp - custom React Hook function to provide useful settings and routes */
 import { Routes, Route } from "react-router-dom";
 import StopScrollState from './contexts/StopScrollState';
 import useApp from './methods/useApp';

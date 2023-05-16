@@ -1,5 +1,7 @@
+// A custom method to display the Highlights Panel.
 import { Link } from "react-router-dom";
 
+// Methods to create the hover effect when the user hovers on an item.
 const myEnter = (setHover, num) => {
     setHover(num);
 }
@@ -8,6 +10,7 @@ const myLeave = (setHover) => {
     setHover(-1);
 }
 
+// Show the appropriate highlights according to the user's choice in header.
 const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
     let choices = [];
     switch (place) {
@@ -27,6 +30,7 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
             choices = [12, 13, 14, 15, 16, 17];
     }
 
+    // Generate the correct Highlights items according to the user's choice.
     for (let i = 0; i < data.length; i++) {
         for (let j of choices) {
 

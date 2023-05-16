@@ -1,10 +1,17 @@
+// This component represents the "Footer" section.
 import React from 'react'
 
 function Footer(props) {
     return (
         <footer className='container d-flex flex-wrap justify-content-between align-content-center foot'>
+
+            {/* Footer text */}
             <p className={`${props.mode === "dark" ? "text-light" : ""}`}>© 2023 World Site, Inc. All rights reserved.</p>
+
+            {/* Footer logo image */}
             <img className='logo' src="/images/logo.png" alt="beautiful website" />
+
+            {/* Social Media Icons */}
             <div className='fs-3 social'>
                 <a href="https://www.twitter.com/itsmohak/" target="_blank" rel="noreferrer"><i className="bi bi-twitter"></i></a>
 

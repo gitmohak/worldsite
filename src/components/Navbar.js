@@ -1,3 +1,19 @@
+// This component represents the "Navbar"
+
+/* useContext - for Context API
+useRef - to create a reference
+useState - to highlight the current Navbar section position
+React Router - to create links in the website
+
+useLocation - to use the current URL location of the user
+useNavigate - to redirect the user to the correct destination
+doScrollSpy - custom Scroll Spy function that detects the current position on the webpage for highlighting the navbar
+
+stopScrollContext - to stop scrolling when the user enables dark mode
+locationUI - a custom method that intitially highlights the user position according to URL location and redirects the user to the correct section if the user directly wants to go there using URL.
+
+darkModeFunc - a custom Navbar method to toggle dark mode of the website.
+doDecoration - to decorate the correct point of the Navbar. */
 import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import doScrollSpy from "../methods/scrollSpy";
@@ -21,10 +37,12 @@ function Navbar(props) {
     }
 
     return (
+        // JSX for Navbar with useful information.
         <section className='d-flex justify-content-center'>
             <nav className={`navbar navbar-expand-lg myNav ${props.mode === "dark" ? "bg-black navbar-dark" : ""}`}>
                 <div className="container-fluid">
 
+                    {/* Website Logo */}
                     <a onClick={() => {
                         setstopScroll(false);
                         navigate("/");
@@ -39,6 +57,7 @@ function Navbar(props) {
                         <ul className={`navbar-nav d-flex align-items-center me-auto mb-2 mb-lg-0 ${props.mode === "dark" ? "myNav-black" : ""}`}>
                             <li className="nav-item me-4">
 
+                                {/* Home Navbar Item */}
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
@@ -52,6 +71,7 @@ function Navbar(props) {
 
                             </li>
 
+                            {/* Featured Navbar Item */}
                             <li className="nav-item me-4">
 
                                 <a onClick={() => {
@@ -66,8 +86,9 @@ function Navbar(props) {
 
                             </li>
 
+                            {/* Highlights Navbar Item */}
                             <li className="nav-item me-4">
-
+                                
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
@@ -80,6 +101,7 @@ function Navbar(props) {
 
                             </li>
 
+                            {/* About me Navbar Item */}
                             <li className="nav-item me-4">
 
                                 <a onClick={() => {
@@ -90,10 +112,11 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About me</a>
 
                             </li>
 
+                            {/* Contact me Navbar Item */}
                             <li className="nav-item">
 
                                 <a onClick={() => {
@@ -104,10 +127,11 @@ function Navbar(props) {
                                         ref.current.click();
                                     }
                                 }}
-                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact us</a>
+                                    className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact me</a>
 
                             </li>
 
+                            {/* "All Articles" Navbar Item */}
                             <li className="nav-item ms-4">
 
                                 <Link onClick={() => {
@@ -122,6 +146,7 @@ function Navbar(props) {
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                             </li>
 
+                            {/* Dark Mode Navbar Item */}
                             <li className="nav-item form-check form-switch darkSwitchLi">
                                 <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" htmlFor="darkSwitch">Dark Mode</label>
 

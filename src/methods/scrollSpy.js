@@ -1,3 +1,5 @@
+// Custom Scroll Spy functions that detect the current position on the webpage for highlighting the navbar
+// scrollSpy initializes the correct useful settings.
 const scrollSpy = (myHome = null, myCarousel = null, myHighlights = null, myAbout = null, myAllArticles = null, setmarkSection) => {
     let myHomeValue = Infinity;
     let myHighlightsValue = Infinity;
@@ -52,6 +54,7 @@ const scrollSpy = (myHome = null, myCarousel = null, myHighlights = null, myAbou
     }
 }
 
+// doScrollSpy performs the required action.
 const doScrollSpy = (location, setmarkSection) => {
     if (location.pathname === "/") {
         scrollSpy(true, true, true, true, false, setmarkSection);

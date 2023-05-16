@@ -1,3 +1,11 @@
+// This component represents the "Featured" section Carousel
+
+/* useContext - for Context API
+postsData.json - a prominent data file created by me to hold the data for all the articles
+
+HTML parser library - to interpret HTML string input
+React Router - to create links in the website
+stopScrollContext - to stop scrolling when the user enables dark mode */
 import React, { useContext } from 'react';
 import data from "../data/postsData.json";
 import parse from 'html-react-parser';
@@ -8,6 +16,7 @@ function Featured() {
     const {setstopScroll} = useContext(stopScrollContext);
 
     return (
+        // Bootstrap Carousel with required useful information
         <section id="myCarousel" className="carousel slide bg-dark" data-bs-ride="carousel">
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -15,6 +24,7 @@ function Featured() {
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
+                {/* First carousel item with useful information */}
                 <div className="carousel-item active">
 
                     <Link onClick={()=>{
@@ -29,6 +39,7 @@ function Featured() {
                     </Link>
                 </div>
 
+                {/* Second carousel item with useful information */}
                 <div className="carousel-item">
 
                     <Link onClick={()=>{
@@ -43,6 +54,7 @@ function Featured() {
                     </Link>
                 </div>
 
+                {/* Third carousel item with useful information */}
                 <div className="carousel-item">
               
                     <Link onClick={()=>{
@@ -56,6 +68,8 @@ function Featured() {
                     </Link>
                 </div>
             </div>
+
+            {/* Previous and Next buttons */}
             <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>

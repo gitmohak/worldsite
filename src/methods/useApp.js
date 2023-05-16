@@ -1,3 +1,5 @@
+// A custom React hook function that provides useful settings to "App.js" (essential React App file).
+// Import various necessary components.
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SinglePost from '../components/SinglePost';
@@ -6,9 +8,13 @@ import Highlights from '../components/Highlights';
 import About from '../components/About';
 import Featured from '../components/Featured';
 
+/* postsData.json - a prominent data file created by me to hold the data for all the articles.
+aboutData.json - a prominent data file created by me to hold the data for the About section. */
 import articlesData from "../data/postsData.json";
 import aboutData from "../data/aboutData.json";
 
+// useState - to set the appropriate mode (light or dark)
+// React Router - to create links in the website
 import { useState } from 'react';
 import { Route } from "react-router-dom";
 
@@ -22,6 +28,7 @@ function useApp() {
         <Footer mode={mode} />
     </>
 
+    // Components to include for any article page.
     for (let i in articlesData) {
         arr.push(<Route key={i} exact path={`/articles/${i}`} element={
             <>
@@ -34,6 +41,7 @@ function useApp() {
         } />);
     }
 
+    // Components to include for any About page.
     for (let i in aboutData) {
         arr2.push(<Route key={i} exact path={`/about/${i}`} element={
             <>

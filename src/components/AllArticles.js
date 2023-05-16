@@ -1,10 +1,11 @@
 // This component represents the "All Articles" page.
 
 /* useContext - for Context API
-data - for "All Articles" page from a json file
+postsData.json - a prominent data file created by me to hold the data for all the articles
+
 HTML parser library - to interpret HTML string input
 React Router - to create links in the website
-StopScrollContext - to stop scrolling when the user enables dark mode */
+stopScrollContext - to stop scrolling when the user enables dark mode */
 import React, { useContext } from 'react';
 import data from "../data/postsData.json";
 import parse from 'html-react-parser';
