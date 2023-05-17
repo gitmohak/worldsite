@@ -362,7 +362,7 @@ body {
   width: 30%;
 }
 
-/* Media Queries for various devices - large, medium, or smaller (generally mobile) devices.
+/* Media Queries for various devices including smaller mobile ones and many other devices.
 The website should not be problematic on large devices */
 @media only screen and (min-width: 1730px) {
   #myHome {

@@ -13,7 +13,7 @@ import AllArticles from './components/AllArticles';
 import NoPage from './components/NoPage';
 
 /* React Router - to create various links for the website
-StopScrollContext - to stop scrolling when the user enables dark mode
+StopScrollState - to stop scrolling when the user enables dark mode. Context API.
 useApp - custom React Hook function to provide useful settings and routes */
 import { Routes, Route } from "react-router-dom";
 import StopScrollState from './contexts/StopScrollState';
@@ -54,7 +54,7 @@ function App() {
           {arr}
           {arr2}
 
-          {/* Error page when you enter a wrong URL */}
+          {/* Error page when the user enters a wrong URL */}
           <Route exact path="*" element={<NoPage />} />
 
         </Route>
