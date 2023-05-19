@@ -22,7 +22,7 @@ function Home(props) {
                 </div>
 
                 {/* Image */}
-                <img className='home-img' src="/images/building.png" alt="Beautiful Landmark with Dome top" />
+                <img className='home-img mb-1' src="/images/home.png" alt="Beautiful Landmark with Dome top" />
         </header>
     )
 }
