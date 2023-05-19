@@ -21,7 +21,7 @@ import stopScrollContext from '../contexts/stopScrollContext';
 import { locationUI, darkModeFunc, doDecoration } from '../methods/navbarMethods';
 
 function Navbar(props) {
-    const [markSection, setmarkSection] = useState("");
+    const [markSection, setmarkSection] = useState(null);
     const { setstopScroll } = useContext(stopScrollContext);
     const ref = useRef(null);
 
