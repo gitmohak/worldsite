@@ -232,7 +232,7 @@ body {
   cursor: pointer;
 }
 
-.highlights .main-highlights div {
+.highlights .main-highlights .highlights-item {
   width: 350px;
   height: 220px;
   border-radius: 10%;
@@ -369,7 +369,7 @@ The website should not be problematic on large devices */
     justify-content: space-between !important;
   }
 
-  .highlights .main-highlights div {
+  .highlights .main-highlights .highlights-item {
     width: 380px;
     height: 280px;
   }
@@ -427,7 +427,7 @@ The website should not be problematic on large devices */
     height: 260px;
   }
 
-  .highlights .main-highlights div {
+  .highlights .main-highlights .highlights-item {
     width: 430px;
     height: 300px;
   }
@@ -681,7 +681,7 @@ The website should not be problematic on large devices */
     font-size: 1rem;
   }
 
-  .highlights .main-highlights div {
+  .highlights .main-highlights .highlights-item {
     width: 95%;
   }
 
@@ -722,7 +722,7 @@ The website should not be problematic on large devices */
     font-size: 3rem;
   }
 
-  .highlights .main-highlights div {
+  .highlights .main-highlights .highlights-item {
     height: 200px;
   }
 

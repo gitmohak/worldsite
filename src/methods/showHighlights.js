@@ -36,7 +36,7 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
 
             if (i === j) {
                 arr.push(
-                    <div key={i} onMouseEnter={() => {
+                    <div className="highlights-item" key={i} onMouseEnter={() => {
                         myEnter(setHover, i);
                     }}
 
@@ -50,6 +50,11 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
                             to={`/articles/${i}`}>
                             <h3 className={`${hover === i ? "d-flex" : "d-none"} align-items-center justify-content-center`}>{data[i].region}</h3>
                         </Link>
+                        <div class="d-flex justify-content-center w-100 h-100">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
                         <img className="w-100 h-100" src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
                     </div>
                 )
