@@ -1,6 +1,7 @@
 // This component represents the "Navbar"
 
 /* useContext - for Context API
+useEffect - to call an important custom "locationUI" method when the component mounts
 useRef - to create a reference
 useState - to highlight the current Navbar section position
 React Router - to create links in the website
@@ -14,7 +15,7 @@ locationUI - a custom method that intitially highlights the user position accord
 
 darkModeFunc - a custom Navbar method to toggle dark mode of the website.
 doDecoration - to decorate the correct point of the Navbar. */
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import doScrollSpy from "../methods/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
@@ -28,9 +29,10 @@ function Navbar(props) {
     const navigate = useNavigate();
     const location = useLocation();
 
-    window.onload = () => {
+    useEffect(() => {
         locationUI(location, setmarkSection);
-    }
+        // eslint-disable-next-line
+    }, []);
 
     window.onscroll = () => {
         doScrollSpy(location, setmarkSection);
@@ -88,7 +90,7 @@ function Navbar(props) {
 
                             {/* Highlights Navbar Item */}
                             <li className="nav-item me-4">
-                                
+
                                 <a onClick={() => {
                                     setstopScroll(false);
                                     navigate("/");
@@ -151,9 +153,9 @@ function Navbar(props) {
                                 <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" htmlFor="darkSwitch">Dark Mode</label>
 
                                 <input onClick={() => {
-                                    darkModeFunc (setstopScroll, props.mode, props.setMode, ref);
+                                    darkModeFunc(setstopScroll, props.mode, props.setMode, ref);
                                 }}
-                                className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
+                                    className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                             </li>
                         </ul>
                     </div>

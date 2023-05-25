@@ -14,15 +14,13 @@ export const locationUI = (location, setmarkSection) => {
         setmarkSection(null);
     }
 
-    setTimeout(() => {
-        if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
+    if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
 
-            let a = document.createElement("a");
-            a.href = location.hash;
-            a.click();
-            a.remove();
-        }
-    }, 0);
+        let a = document.createElement("a");
+        a.href = location.hash;
+        a.click();
+        a.remove();
+    }
 }
 
 export const darkModeFunc = (setstopScroll, mode, setMode, ref) => {
