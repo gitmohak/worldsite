@@ -3,7 +3,7 @@ locationUI - a custom method that intitially highlights the user position accord
 
 darkModeFunc - a custom Navbar method to toggle dark mode of the website.
 doDecoration - to decorate the correct point of the Navbar. */
-export const locationUI = (location, setmarkSection) =>{
+export const locationUI = (location, setmarkSection) => {
     if (location.pathname === "/") {
         setmarkSection("myHome");
     }
@@ -14,13 +14,15 @@ export const locationUI = (location, setmarkSection) =>{
         setmarkSection(null);
     }
 
-    if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
+    setTimeout(() => {
+        if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
 
-        let a = document.createElement("a");
-        a.href = location.hash;
-        a.click();
-        a.remove();
-    }
+            let a = document.createElement("a");
+            a.href = location.hash;
+            a.click();
+            a.remove();
+        }
+    }, 0);
 }
 
 export const darkModeFunc = (setstopScroll, mode, setMode, ref) => {
