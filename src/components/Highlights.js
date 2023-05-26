@@ -18,7 +18,7 @@ function Highlights(props) {
 
     // use the custom showHighlights method for the functionality of the Highlights panel and generate panel items
     let arr = [];
-    showHighlights(place, data, arr, hover, setHover, setstopScroll);
+    showHighlights(place, data, arr, hover, setHover, setstopScroll, props.mode);
 
     return (
         <section id="myHighlights" className='container highlights'>

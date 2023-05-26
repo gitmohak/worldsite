@@ -11,7 +11,7 @@ const myLeave = (setHover) => {
 }
 
 // Show the appropriate highlights according to the user's choice in header.
-const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
+const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) => {
     let choices = [];
     switch (place) {
         default:
@@ -52,7 +52,7 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll) => {
                         </Link>
 
                         <div className="d-flex justify-content-center w-100 h-100">
-                            <div className="spinner-border" role="status">
+                            <div className={`spinner-border ${mode === "dark" ? "text-light" : ""}`} role="status">
                                 <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>
