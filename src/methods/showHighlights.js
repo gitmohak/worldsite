@@ -52,12 +52,19 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) 
                         </Link>
 
                         <div className="d-flex justify-content-center w-100 h-100">
-                            <div className={`spinner-border ${mode === "dark" ? "text-light" : ""}`} role="status">
+
+                            <div className={`spinner-border ${mode === "dark" ? "text-light" : ""}`} id={place === "all" ? data[i].image2 : data[i].image1} role="status">
+
                                 <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>
                         
-                        <img className="w-100 h-100" src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
+                        <img className="w-100 h-100" onLoad={() => {
+
+                            document.getElementById(place === "all" ? data[i].image2 : data[i].image1).hidden = true;
+                        }}
+                        
+                        src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
                     </div>
                 )
             }
