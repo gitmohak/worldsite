@@ -34,9 +34,8 @@ function Navbar(props) {
         // eslint-disable-next-line
     }, []);
 
-    window.onscroll = () => {
+    window.onscroll = () =>
         doScrollSpy(location, setmarkSection);
-    }
 
     return (
         // JSX for Navbar with useful information.
@@ -65,9 +64,8 @@ function Navbar(props) {
                                     navigate("/");
                                     setmarkSection("myHome");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myHome")}`} aria-current="page" href="#myHome">Home</a>
 
@@ -80,9 +78,8 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myCarousel")}`} aria-current="page" id="myCarousel-link" href="#myCarousel">Featured</a>
 
@@ -95,9 +92,8 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myHighlights")}`} aria-current="page" id="myHighlights-link" href="#myHighlights">Highlights</a>
 
@@ -110,9 +106,8 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAbout")}`} aria-current="page" href="#myAbout" id="myAbout-link">About me</a>
 
@@ -125,9 +120,8 @@ function Navbar(props) {
                                     setstopScroll(false);
                                     navigate("/");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myContact")}`} aria-current="page" id="myContact-link" href="#myContact">Contact me</a>
 
@@ -141,9 +135,8 @@ function Navbar(props) {
                                     window.scrollTo(0, 0);
                                     setmarkSection("myAllArticles");
 
-                                    if (window.innerWidth <= 991.5) {
+                                    if (window.innerWidth <= 991.5)
                                         ref.current.click();
-                                    }
                                 }}
                                     className={`nav-link text-center fs-4 fw-bold text-primary ${doDecoration(markSection, props.mode, "myAllArticles")}`} aria-current="page" to="/all">All Articles</Link>
                             </li>
@@ -152,9 +145,9 @@ function Navbar(props) {
                             <li className="nav-item form-check form-switch darkSwitchLi">
                                 <label className={`nav-link text-center fs-4 form-check-label ${doDecoration(markSection, props.mode, "")}`} aria-current="page" htmlFor="darkSwitch">Dark Mode</label>
 
-                                <input onClick={() => {
-                                    darkModeFunc(setstopScroll, props.mode, props.setMode, ref);
-                                }}
+                                <input onClick={() =>
+                                    darkModeFunc(setstopScroll, props.mode, props.setMode, ref)
+                                }
                                     className="form-check-input d-inline" type="checkbox" role="switch" id="darkSwitch" />
                             </li>
                         </ul>

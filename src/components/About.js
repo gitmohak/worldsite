@@ -21,9 +21,9 @@ function About(props) {
         arr.push(
 
             <div className={`card mt-5 ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={i}>
-                <Link onClick={() => {
-                    setstopScroll(false);
-                }}
+                <Link onClick={() =>
+                    setstopScroll(false)
+                }
                     to={`/about/${i}`}>
                     <img src={data[i].image1} className="card-img-top" alt="Great region" />
                     <div className={`card-body d-flex flex-wrap justify-content-center text-center ${props.mode === "dark" ? "text-light" : ""}`}>

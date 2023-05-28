@@ -21,9 +21,9 @@ function AllArticles(props) {
 
         arr[i] = <div className={`card mt-5 ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={i}>
 
-            <Link onClick={() => {
-                setstopScroll(false);
-            }}
+            <Link onClick={() =>
+                setstopScroll(false)
+            }
                 to={`/articles/${i}`}>
                 <img src={data[i].image1} className="card-img-top" alt="Beautiful Article" />
                 <div className={`card-body d-flex flex-wrap justify-content-center text-center ${props.mode === "dark" ? "text-light" : ""}`}>
@@ -37,9 +37,8 @@ function AllArticles(props) {
 
     // User should be at the top of the page initially.
     setTimeout(() => {
-        if (stopScroll === false) {
+        if (stopScroll === false)
             window.scrollTo(0, 0);
-        }
     }, 0);
 
     return (

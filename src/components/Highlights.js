@@ -27,21 +27,21 @@ function Highlights(props) {
             {/* Clickable header buttons to show Highlights items */}
             <ul className='d-flex myHeaders'>
             {/* eslint-disable */}
-                <li><a className={`${place === "all" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
-                    setPlace("all");
-                }}>Everything</a></li>
+                <li><a className={`${place === "all" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() =>
+                    setPlace("all")
+                }>Everything</a></li>
 
-                <li><a className={`${place === "india" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
-                    setPlace("india");
-                }} >India</a></li>
+                <li><a className={`${place === "india" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() =>
+                    setPlace("india")
+                } >India</a></li>
 
-                <li><a className={`${place === "america" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
-                    setPlace("america");
-                }} >America</a></li>
+                <li><a className={`${place === "america" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() =>
+                    setPlace("america")
+                } >America</a></li>
 
-                <li><a className={`${place === "england" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() => {
-                    setPlace("england");
-                }} >England</a></li>
+                <li><a className={`${place === "england" ? "current-select" : ""} ${props.mode === "dark" ? "text-light" : ""}`} onClick={() =>
+                    setPlace("england")
+                } >England</a></li>
                 {/* eslint-enable */}
             </ul>
 

@@ -4,15 +4,14 @@ locationUI - a custom method that intitially highlights the user position accord
 darkModeFunc - a custom Navbar method to toggle dark mode of the website.
 doDecoration - to decorate the correct point of the Navbar. */
 export const locationUI = (location, setmarkSection) => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/")
         setmarkSection("myHome");
-    }
-    else if (location.pathname === "/all") {
+
+    else if (location.pathname === "/all")
         setmarkSection("myAllArticles");
-    }
-    else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about") {
+
+    else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about")
         setmarkSection(null);
-    }
 
     if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
 
@@ -47,27 +46,24 @@ export const darkModeFunc = (setstopScroll, mode, setMode, ref) => {
         document.getElementById("myCSS").innerHTML = "";
     }
 
-    if (window.innerWidth <= 991.5) {
+    if (window.innerWidth <= 991.5)
         ref.current.click();
-    }
 }
 
 export const doDecoration = (markSection, mode, ms) => {
     let design = "";
 
-    if (markSection === ms) {
-        if (mode === "light") {
-            design = "text-decoration-underline text-success";
-        }
-        else if (mode === "dark") {
-            design = "text-decoration-underline darkModeGreen";
-        }
-    }
-
     if (mode === "light") {
+        if (markSection === ms)
+            design = "text-decoration-underline text-success";
+
         return "lightModeBlue " + design;
     }
+
     else if (mode === "dark") {
+        if (markSection === ms)
+            design = "text-decoration-underline darkModeGreen";
+
         return "darkModeBlue " + design;
     }
 }

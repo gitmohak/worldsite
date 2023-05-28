@@ -36,17 +36,17 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) 
 
             if (i === j) {
                 arr.push(
-                    <div className="highlights-item" key={i} onMouseEnter={() => {
-                        myEnter(setHover, i);
-                    }}
+                    <div className="highlights-item" key={i} onMouseEnter={() =>
+                        myEnter(setHover, i)
+                    }
 
-                        onMouseLeave={() => {
-                            myLeave(setHover);
-                        }}>
+                        onMouseLeave={() =>
+                            myLeave(setHover)
+                        }>
 
-                        <Link onClick={() => {
-                            setstopScroll(false);
-                        }}
+                        <Link onClick={() =>
+                            setstopScroll(false)
+                        }
                             to={`/articles/${i}`}>
                             <h3 className={`${hover === i ? "d-flex" : "d-none"} align-items-center justify-content-center`}>{data[i].region}</h3>
                         </Link>
@@ -54,15 +54,13 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) 
                         <div className="d-flex justify-content-center w-100 h-100">
 
                             <div className={`spinner-border ${mode === "dark" ? "text-light" : ""}`} id={`spinner-${i}`} role="status">
-
                                 <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>
                         
-                        <img className="w-100 h-100" onLoad={() => {
-                            document.getElementById(`spinner-${i}`).hidden = true;
-                        }}
-                        
+                        <img className="w-100 h-100" onLoad={() =>
+                            document.getElementById(`spinner-${i}`).hidden = true
+                        }
                         src={place === "all" ? data[i].image2 : data[i].image1} alt="Terrific Location" />
                     </div>
                 )

@@ -28,15 +28,12 @@ function useSinglePost(articleNum, aboutNum) {
 
     // The user should initially be at the top of the page.
     setTimeout(() => {
-        if (stopScroll === false) {
+        if (stopScroll === false)
             window.scrollTo(0, 0);
-        }
     }, 0);
 
     // Return the required useful information.
-    return {
-        postNum, date, data
-    }
+    return { postNum, date, data }
 }
 
 export default useSinglePost
