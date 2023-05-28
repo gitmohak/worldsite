@@ -132,7 +132,7 @@ function Navbar(props) {
 
                                 <Link onClick={() => {
                                     setstopScroll(false);
-                                    window.scrollTo(0, 0);
+                                    window.scrollTo(0, 1);
                                     setmarkSection("myAllArticles");
 
                                     if (window.innerWidth <= 991.5)
