@@ -8,7 +8,7 @@ handleSubmit - custom function
 HTML parser library - to interpret HTML string input */
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
-import handleSubmit from '../methods/handleSubmit';
+import handleSubmit from '../functions/handleSubmit';
 import parse from 'html-react-parser';
 
 function Contact(props) {

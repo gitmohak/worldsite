@@ -38,7 +38,7 @@ function AllArticles(props) {
     // User should be at the top of the page initially.
     setTimeout(() => {
         if (stopScroll === false)
-            window.scrollTo(0, 1);
+            window.scrollTo(0, 0);
     }, 0);
 
     return (

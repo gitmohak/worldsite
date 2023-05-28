@@ -17,7 +17,7 @@ StopScrollState - to stop scrolling when the user enables dark mode. Context API
 useApp - custom React Hook function to provide useful settings and routes */
 import { Routes, Route } from "react-router-dom";
 import StopScrollState from './contexts/StopScrollState';
-import useApp from './methods/useApp';
+import useApp from './functions/useApp';
 
 function App() {
   const { lowerSection, mode, setMode, arr, arr2 } = useApp();

@@ -9,7 +9,7 @@ showHighlights - custom JavaScript function to display highlights */
 import React, { useState, useContext } from 'react';
 import data from "../data/postsData.json";
 import stopScrollContext from '../contexts/stopScrollContext';
-import showHighlights from '../methods/showHighlights';
+import showHighlights from '../functions/showHighlights';
 
 function Highlights(props) {
     const { setstopScroll } = useContext(stopScrollContext);

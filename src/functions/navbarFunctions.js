@@ -1,4 +1,4 @@
-/* A few custom Navbar methods.
+/* A few custom Navbar functions.
 locationUI - a custom method that intitially highlights the user position according to URL location and redirects the user to the correct section if the user directly wants to go there using URL.
 
 darkModeFunc - a custom Navbar method to toggle dark mode of the website.

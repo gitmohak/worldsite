@@ -1,7 +1,7 @@
 // A custom method to display the Highlights Panel.
 import { Link } from "react-router-dom";
 
-// Methods to create the hover effect when the user hovers on an item.
+// Functions to create the hover effect when the user hovers on an item.
 const myEnter = (setHover, num) =>
     setHover(num);
 

@@ -4,7 +4,7 @@
 useSinglePost - custom React Hook Function to do useful settings for this component */
 import React from 'react';
 import parse from 'html-react-parser';
-import useSinglePost from '../methods/useSinglePost';
+import useSinglePost from '../functions/useSinglePost';
 
 function SinglePost(props) {
   const { postNum, date, data } = useSinglePost(props.articleNum, props.aboutNum);

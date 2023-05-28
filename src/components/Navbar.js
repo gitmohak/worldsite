@@ -17,9 +17,9 @@ darkModeFunc - a custom Navbar method to toggle dark mode of the website.
 doDecoration - to decorate the correct point of the Navbar. */
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import scrollSpy from "../methods/scrollSpy";
+import scrollSpy from "../functions/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
-import { locationUI, darkModeFunc, doDecoration } from '../methods/navbarMethods';
+import { locationUI, darkModeFunc, doDecoration } from '../functions/navbarFunctions';
 
 function Navbar(props) {
     const [markSection, setmarkSection] = useState(null);
@@ -132,7 +132,7 @@ function Navbar(props) {
 
                                 <Link onClick={() => {
                                     setstopScroll(false);
-                                    window.scrollTo(0, 1);
+                                    window.scrollTo(0, 0);
                                     setmarkSection("myAllArticles");
 
                                     if (window.innerWidth <= 991.5)

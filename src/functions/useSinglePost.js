@@ -29,7 +29,7 @@ function useSinglePost(articleNum, aboutNum) {
     // The user should initially be at the top of the page.
     setTimeout(() => {
         if (stopScroll === false)
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 1);
     }, 0);
 
     // Return the required useful information.
