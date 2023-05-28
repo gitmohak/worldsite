@@ -2,13 +2,11 @@
 import { Link } from "react-router-dom";
 
 // Methods to create the hover effect when the user hovers on an item.
-const myEnter = (setHover, num) => {
+const myEnter = (setHover, num) =>
     setHover(num);
-}
 
-const myLeave = (setHover) => {
+const myLeave = (setHover) =>
     setHover(-1);
-}
 
 // Show the appropriate highlights according to the user's choice in header.
 const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) => {

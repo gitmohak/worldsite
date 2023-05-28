@@ -23,12 +23,13 @@ function Contact(props) {
         <section id="myContact" className='contact container d-flex flex-wrap justify-content-around'>
             <h1 className={`w-100 mb-4 ${props.mode === "dark" ? "text-light" : ""}`}>Contact me</h1>
             <img src="/images/contactTall.png" alt="Contact Us with message" />
+            
             {/* Contact Form with required useful information */}
             <form className={`${props.mode === "dark" ? "text-light" : ""}`} ref={contactForm}
             
-            onSubmit={(event) =>{
-                handleSubmit(event, modalRef, setresultText, emailjs, contactForm);
-            }} method='post'>
+            onSubmit={(event) =>
+                handleSubmit(event, modalRef, setresultText, emailjs, contactForm)
+            } method='post'>
 
                 {/* Name input with form validation */}
                 <div className="mb-3">
