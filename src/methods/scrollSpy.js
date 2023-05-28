@@ -1,26 +1,36 @@
-// Custom Scroll Spy functions that detect the current position on the webpage for highlighting the navbar
-// scrollSpy initializes the correct useful settings.
-const scrollSpy = (myHome = null, myCarousel = null, myHighlights = null, myAbout = null, myAllArticles = null, setmarkSection) => {
+// Custom Scroll Spy function that detects the current position on the webpage for highlighting the appropriate Navbar items.
+const scrollSpy = (location, setmarkSection) => {
+
+    // Initialize the correct useful settings.
+    const myHome = document.getElementById("myHome");
+    const myCarousel = document.getElementById("myCarousel");
+    const myHighlights = document.getElementById("myHighlights");
+    const myAbout = document.getElementById("myAbout");
+    const myAllArticles = document.getElementById("myAllArticles");
+
     let [myHomeValue, myHighlightsValue, myAboutValue, myAllArticlesValue, myCarouselValue] = Array(5).fill(Infinity);
 
     const myContactValue = document.getElementById("myContact").offsetTop;
 
     if (myHome)
-        myHomeValue = document.getElementById("myHome").offsetTop;
+        myHomeValue = myHome.offsetTop;
 
     if (myCarousel)
-        myCarouselValue = document.getElementById("myCarousel").offsetTop;
+        myCarouselValue = myCarousel.offsetTop;
 
     if (myHighlights)
-        myHighlightsValue = document.getElementById("myHighlights").offsetTop;
+        myHighlightsValue = myHighlights.offsetTop;
 
     if (myAbout)
-        myAboutValue = document.getElementById("myAbout").offsetTop;
+        myAboutValue = myAbout.offsetTop;
 
     if (myAllArticles)
-        myAllArticlesValue = document.getElementById("myAllArticles").offsetTop;
+        myAllArticlesValue = myAllArticles.offsetTop;
 
-    //Mark the correct Navbar items
+    //Mark the appropriate Navbar items according to location & scroll position
+    if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about")
+        setmarkSection(null);
+
     if (window.scrollY + 20 >= myContactValue || window.scrollY + window.innerHeight >= document.body.offsetHeight - 30)
         setmarkSection("myContact");
 
@@ -40,23 +50,4 @@ const scrollSpy = (myHome = null, myCarousel = null, myHighlights = null, myAbou
         setmarkSection("myAllArticles");
 }
 
-// doScrollSpy performs the required action.
-const doScrollSpy = (location, setmarkSection) => {
-    if (location.pathname === "/")
-        scrollSpy(true, true, true, true, false, setmarkSection);
-
-    else if (location.pathname === "/all")
-        scrollSpy(false, true, false, true, true, setmarkSection);
-
-    else if (location.pathname.slice(0, 9) === "/articles") {
-        setmarkSection(null);
-        scrollSpy(false, false, true, true, false, setmarkSection);
-    }
-
-    else if (location.pathname.slice(0, 6) === "/about") {
-        setmarkSection(null);
-        scrollSpy(false, true, true, false, false, setmarkSection);
-    }
-}
-
-export default doScrollSpy;
+export default scrollSpy;

@@ -8,7 +8,7 @@ React Router - to create links in the website
 
 useLocation - to use the current URL location of the user
 useNavigate - to redirect the user to the correct destination
-doScrollSpy - custom Scroll Spy function that detects the current position on the webpage for highlighting the navbar
+scrollSpy - custom function that detects the current position on the webpage for highlighting the Navbar items
 
 stopScrollContext - to stop scrolling when the user enables dark mode
 locationUI - a custom method that intitially highlights the user position according to URL location and redirects the user to the correct section if the user directly wants to go there using URL.
@@ -17,7 +17,7 @@ darkModeFunc - a custom Navbar method to toggle dark mode of the website.
 doDecoration - to decorate the correct point of the Navbar. */
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import doScrollSpy from "../methods/scrollSpy";
+import scrollSpy from "../methods/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
 import { locationUI, darkModeFunc, doDecoration } from '../methods/navbarMethods';
 
@@ -35,7 +35,7 @@ function Navbar(props) {
     }, []);
 
     window.onscroll = () =>
-        doScrollSpy(location, setmarkSection);
+        scrollSpy(location, setmarkSection);
 
     return (
         // JSX for Navbar with useful information.
