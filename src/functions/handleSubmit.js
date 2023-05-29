@@ -23,12 +23,10 @@ const handleSubmit = (event, modalRef, setresultText, emailjs, contactForm) => {
             });
         });
 
-    setTimeout(() => {
         document.getElementById("senderName").value = "";
         document.getElementById("senderEmail").value = "";
         document.getElementById("subject").value = "";
         document.getElementById("sender-msg").value = "";
-    }, 0);
 }
 
 export default handleSubmit;

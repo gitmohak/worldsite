@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import stopScrollContext from '../contexts/stopScrollContext';
 
 function AllArticles(props) {
-    const { stopScroll, setstopScroll } = useContext(stopScrollContext);
+    const { setstopScroll } = useContext(stopScrollContext);
 
     // Process JSX to fill useful information and generate the "All Articles" section cards.
     let arr = [];
@@ -34,12 +34,6 @@ function AllArticles(props) {
             </Link>
         </div>
     }
-
-    // User should be at the top of the page initially.
-    setTimeout(() => {
-        if (stopScroll === false)
-            window.scrollTo(0, 0);
-    }, 0);
 
     return (
         // JSX for "All Articles" page.
