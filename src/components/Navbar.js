@@ -34,8 +34,14 @@ function Navbar(props) {
         // eslint-disable-next-line
     }, []);
 
-    window.onscroll = () =>
-        scrollSpy(location, setmarkSection);
+    window.onscroll = () => {
+        let timer;
+        clearTimeout(timer);
+        
+        timer = setTimeout(() => {
+            scrollSpy(location, setmarkSection);
+        }, 300);
+    }
 
     return (
         // JSX for Navbar with useful information.
