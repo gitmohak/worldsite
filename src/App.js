@@ -1,6 +1,6 @@
 /* This project has been created by Mohak Arora
 
-The Application extensively uses various advanced technologies including HTML, CSS, Bootstrap, JavaScript, React, Node Package Manager, and useful React libraries. Additionally, this website is fully responsive. The website (World Site) is about showing useful travel information to the world. This section is very important. It takes various components of the website and combines them together in a structured manner for further interpretation.
+This website is a JavaScript project, enhanced using React. The Application extensively uses various advanced technologies including HTML, CSS, Bootstrap, JavaScript, React, Node Package Manager, and useful React libraries. Additionally, this website is fully responsive. The website (World Site) is about showing useful travel information to the world. This section is very important. It takes various components of the website and combines them together in a structured manner for further interpretation.
 */
 
 // Various components required for this file.
