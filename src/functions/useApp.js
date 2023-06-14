@@ -15,8 +15,10 @@ import aboutData from "../data/aboutData.json";
 
 // useState - to set the appropriate mode (light or dark)
 // React Router - to create links in the website
+// uuid - library to create unique IDs for array element keys
 import { useState } from 'react';
 import { Route } from "react-router-dom";
+import { v4 as uniqueID } from 'uuid';
 
 function useApp() {
     const [mode, setMode] = useState("light");
@@ -30,7 +32,7 @@ function useApp() {
 
     // Components to include for any article page.
     for (let i in articlesData) {
-        arr.push(<Route key={i} exact path={`/articles/${i}`} element={
+        arr.push(<Route key={uniqueID()} exact path={`/articles/${i}`} element={
             <>
                 <Navbar mode={mode} setMode={setMode} />
                 <SinglePost mode={mode} articleNum={i} />
@@ -43,7 +45,7 @@ function useApp() {
 
     // Components to include for any About page.
     for (let i in aboutData) {
-        arr2.push(<Route key={i} exact path={`/about/${i}`} element={
+        arr2.push(<Route key={uniqueID()} exact path={`/about/${i}`} element={
             <>
                 <Navbar mode={mode} setMode={setMode} />
                 <SinglePost mode={mode} aboutNum={i} />

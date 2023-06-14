@@ -1,5 +1,8 @@
-// A custom method to display the Highlights Panel.
+/* A custom method to display the Highlights Panel.
+Link - from React Router
+uuid - library to create unique IDs for array element keys */
 import { Link } from "react-router-dom";
+import { v4 as uniqueID } from 'uuid';
 
 // Functions to create the hover effect when the user hovers on an item.
 const myEnter = (setHover, num) =>
@@ -34,7 +37,7 @@ const showHighlights = (place, data, arr, hover, setHover, setstopScroll, mode) 
 
             if (i === j) {
                 arr.push(
-                    <div className="highlights-item" key={i} onMouseEnter={() =>
+                    <div className="highlights-item" key={uniqueID()} onMouseEnter={() =>
                         myEnter(setHover, i)
                     }
 

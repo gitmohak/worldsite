@@ -5,12 +5,15 @@ aboutData.json - a prominent data file created by me to hold the data for the Ab
 HTML parser library - to interpret HTML string input
 
 React Router - to create links in the website
-stopScrollContext - to stop scrolling when the user enables dark mode */
+stopScrollContext - to stop scrolling when the user enables dark mode
+uuid - library to create unique IDs for array element keys
+*/
 import React, { useContext } from 'react';
 import data from "../data/aboutData.json";
 import parse from 'html-react-parser';
 import { Link } from "react-router-dom";
 import stopScrollContext from '../contexts/stopScrollContext';
+import { v4 as uniqueID } from 'uuid';
 
 function About(props) {
     const { setstopScroll } = useContext(stopScrollContext);
@@ -20,7 +23,7 @@ function About(props) {
     for (let i in data) {
         arr.push(
 
-            <div className={`card mt-5 ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={i}>
+            <div className={`card mt-5 ${props.mode === "dark" ? "bg-black border-light" : "border-black"}`} key={uniqueID()}>
                 <Link onClick={() =>
                     setstopScroll(false)
                 }
