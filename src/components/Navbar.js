@@ -39,7 +39,7 @@ function Navbar(props) {
     window.onscroll = () => {
         let timer;
         clearTimeout(timer);
-        
+
         timer = setTimeout(() => {
             scrollSpy(location, setmarkSection);
         }, 300);
@@ -172,7 +172,10 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-    mode: "light"
+    mode: "light",
+    setMode: (mode) => {
+        console.error("There is a problem while setting the " + mode + " mode.");
+    }
 }
 
 export default Navbar
