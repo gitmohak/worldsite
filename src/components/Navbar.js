@@ -173,8 +173,8 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
     mode: "light",
-    setMode: (mode) => {
-        console.error("There is a problem while setting the " + mode + " mode.");
+    setMode: (newMode) => {
+        console.log("There is a problem while setting the " + newMode + " mode. The App is using the previous value of mode.");
     }
 }
 
