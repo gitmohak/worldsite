@@ -2,18 +2,21 @@
 
 /* useContext - for Context API
 postsData.json - a prominent data file created by me to hold the data for all the articles
-
 HTML parser library - to interpret HTML string input
 React Router - to create links in the website
+
 stopScrollContext - to stop scrolling when the user enables dark mode
 uuid - library to create unique IDs for array element keys
+PropTypes - to validate the types of props
 */
 import React, { useContext } from 'react';
 import data from "../data/postsData.json";
 import parse from 'html-react-parser';
 import { Link } from "react-router-dom";
+
 import stopScrollContext from '../contexts/stopScrollContext';
 import { v4 as uniqueID } from 'uuid';
+import PropTypes from 'prop-types';
 
 function AllArticles(props) {
     const { setstopScroll } = useContext(stopScrollContext);
@@ -46,5 +49,9 @@ function AllArticles(props) {
         </section>
     )
 }
+
+AllArticles.propTypes = {
+    mode: PropTypes.string
+};
 
 export default AllArticles

@@ -1,10 +1,12 @@
 // This component represents the article displayed when the user wants to see a full article or "About me" information
 
 /* HTML parser library - to interpret HTML string input.
-useSinglePost - custom React Hook Function to do useful settings for this component */
+useSinglePost - custom React Hook Function to do useful settings for this component
+PropTypes - to validate the types of props */
 import React from 'react';
 import parse from 'html-react-parser';
 import useSinglePost from '../functions/useSinglePost';
+import PropTypes from 'prop-types';
 
 function SinglePost(props) {
   const { postNum, date, data } = useSinglePost(props.articleNum, props.aboutNum);
@@ -26,5 +28,11 @@ function SinglePost(props) {
     </article>
   )
 }
+
+SinglePost.propTypes = {
+  mode: PropTypes.string,
+  articleNum: PropTypes.string,
+  aboutNum: PropTypes.string
+};
 
 export default SinglePost

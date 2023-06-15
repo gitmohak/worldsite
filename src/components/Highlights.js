@@ -5,11 +5,13 @@ useContext - for Context API
 
 postsData.json - a prominent data file created by me to hold the data for all the articles.
 stopScrollContext - to stop scrolling when the user enables dark mode
-showHighlights - custom JavaScript function to display highlights */
+showHighlights - custom JavaScript function to display highlights
+PropTypes - to validate the types of props */
 import React, { useState, useContext } from 'react';
 import data from "../data/postsData.json";
 import stopScrollContext from '../contexts/stopScrollContext';
 import showHighlights from '../functions/showHighlights';
+import PropTypes from 'prop-types';
 
 function Highlights(props) {
     const { setstopScroll } = useContext(stopScrollContext);
@@ -52,5 +54,9 @@ function Highlights(props) {
         </section>
     )
 }
+
+Highlights.propTypes = {
+    mode: PropTypes.string
+};
 
 export default Highlights

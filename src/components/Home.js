@@ -1,5 +1,7 @@
 // This component represents the "Home" section
+// PropTypes - to validate the types of props
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Home(props) {
     return (
@@ -26,5 +28,9 @@ function Home(props) {
         </header>
     )
 }
+
+Home.propTypes = {
+    mode: PropTypes.string
+};
 
 export default Home

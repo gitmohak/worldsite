@@ -1,5 +1,7 @@
 // This component represents the "Footer" section.
-import React from 'react'
+// PropTypes - to validate the types of props
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Footer(props) {
     return (
@@ -22,5 +24,9 @@ function Footer(props) {
         </footer>
     )
 }
+
+Footer.propTypes = {
+    mode: PropTypes.string
+};
 
 export default Footer

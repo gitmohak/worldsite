@@ -5,11 +5,14 @@ useRef - to create required references to modal and form
 useState - to create result of the form
 
 handleSubmit - custom function
-HTML parser library - to interpret HTML string input */
+HTML parser library - to interpret HTML string input
+PropTypes - to validate the types of props */
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
+
 import handleSubmit from '../functions/handleSubmit';
 import parse from 'html-react-parser';
+import PropTypes from 'prop-types';
 
 function Contact(props) {
     const contactForm = useRef();
@@ -86,5 +89,9 @@ function Contact(props) {
         </section>
     )
 }
+
+Contact.propTypes = {
+    mode: PropTypes.string
+};
 
 export default Contact

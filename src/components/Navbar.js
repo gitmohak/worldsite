@@ -14,12 +14,14 @@ stopScrollContext - to stop scrolling when the user enables dark mode
 locationUI - a custom method that intitially highlights the user position according to URL location and redirects the user to the correct section if the user directly wants to go there using URL.
 
 darkModeFunc - a custom Navbar method to toggle dark mode of the website.
-doDecoration - to decorate the correct point of the Navbar. */
+doDecoration - to decorate the correct point of the Navbar.
+PropTypes - to validate the types of props */
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import scrollSpy from "../functions/scrollSpy";
 import stopScrollContext from '../contexts/stopScrollContext';
 import { locationUI, darkModeFunc, doDecoration } from '../functions/navbarFunctions';
+import PropTypes from 'prop-types';
 
 function Navbar(props) {
     const [markSection, setmarkSection] = useState(null);
@@ -163,5 +165,10 @@ function Navbar(props) {
         </section>
     )
 }
+
+Navbar.propTypes = {
+    mode: PropTypes.string,
+    setMode: PropTypes.func
+};
 
 export default Navbar
