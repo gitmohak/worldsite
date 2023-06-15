@@ -33,4 +33,8 @@ Home.propTypes = {
     mode: PropTypes.string
 };
 
+Home.defaultProps = {
+    mode: "light"
+}
+
 export default Home

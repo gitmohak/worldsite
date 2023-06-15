@@ -59,4 +59,8 @@ Highlights.propTypes = {
     mode: PropTypes.string
 };
 
+Highlights.defaultProps = {
+    mode: "light"
+}
+
 export default Highlights

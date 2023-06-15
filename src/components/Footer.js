@@ -29,4 +29,8 @@ Footer.propTypes = {
     mode: PropTypes.string
 };
 
+Footer.defaultProps = {
+    mode: "light"
+}
+
 export default Footer

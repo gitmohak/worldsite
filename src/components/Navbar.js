@@ -171,4 +171,8 @@ Navbar.propTypes = {
     setMode: PropTypes.func
 };
 
+Navbar.defaultProps = {
+    mode: "light"
+}
+
 export default Navbar

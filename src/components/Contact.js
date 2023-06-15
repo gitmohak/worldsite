@@ -94,4 +94,8 @@ Contact.propTypes = {
     mode: PropTypes.string
 };
 
+Contact.defaultProps = {
+    mode: "light"
+}
+
 export default Contact

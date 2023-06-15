@@ -35,4 +35,10 @@ SinglePost.propTypes = {
   aboutNum: PropTypes.string
 };
 
+SinglePost.defaultProps = {
+  mode: "light",
+  articleNum: "0",
+  aboutNum: "0"
+}
+
 export default SinglePost

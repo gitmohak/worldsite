@@ -54,4 +54,8 @@ AllArticles.propTypes = {
     mode: PropTypes.string
 };
 
+AllArticles.defaultProps = {
+    mode: "light"
+}
+
 export default AllArticles

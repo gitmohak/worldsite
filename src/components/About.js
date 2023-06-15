@@ -55,4 +55,8 @@ About.propTypes = {
     mode: PropTypes.string
 };
 
+About.defaultProps = {
+    mode: "light"
+}
+
 export default About
