@@ -13,13 +13,8 @@ export const locationUI = (location, setmarkSection) => {
     else if (location.pathname.slice(0, 9) === "/articles" || location.pathname.slice(0, 6) === "/about")
         setmarkSection(null);
 
-    if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact") {
-
-        let a = document.createElement("a");
-        a.href = location.hash;
-        a.click();
-        a.remove();
-    }
+    if (location.hash === "#myCarousel" || location.hash === "#myHighlights" || location.hash === "#myAbout" || location.hash === "#myContact")
+        window.location.href = location.hash;
 }
 
 export const darkModeFunc = (setstopScroll, mode, setMode, ref) => {
